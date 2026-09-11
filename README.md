@@ -17,13 +17,26 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
   calls over 20s (dashed line).
 - A day-by-day matrix of **which campaign each call came from**.
 - Per-campaign totals including cost per 20-second call.
+- A **Yesterday** card (the last complete day) with that day's billed amount,
+  calls, 20s calls and cost per call, broken out by campaign.
 
 ## Snapshot
 
-Frozen **11 Sep 2026**. ₹5,039.01 · 48 calls placed · 10 lasted 20s · 7 lasted 60s.
+Frozen **11 Sep 2026**. Ad spend ₹5,039.01 + 18% GST ₹907.02 = **₹5,946.03 billed**.
+48 calls placed · 10 lasted 20s · 7 lasted 60s.
 ₹49.11 per call placed, but **₹235.71 per call that actually held 20 seconds**
 (call campaigns only — NRI Elder Care drives website traffic, not phone calls,
 so it is excluded from every per-call figure).
+
+## GST and dates
+
+`GST = 0.18` — Meta bills 18% GST on ad spend in India. The headline "Total billed"
+is GST-inclusive; **every per-call cost is ex-GST**, so it reconciles against Ads
+Manager, and each one is labelled that way on the page.
+
+`SNAP_DAY` is the last day present in the data (a part-day) and `YDAY` the last
+complete day, which is what the Yesterday card reads. Both are plain constants —
+move them together on every refresh, or the card will silently show a stale day.
 
 ## Refreshing
 

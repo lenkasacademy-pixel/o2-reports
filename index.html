@@ -113,6 +113,26 @@ td.z{color:var(--ink-3)}
 .tag.web{background:var(--warn-bg); color:var(--warn)}
 .tag.live{background:var(--brand-soft); color:var(--accent)}
 
+.invoice .sub{margin-top:8px; padding-top:8px; border-top:1px solid rgba(255,255,255,.22);
+  font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.01em; opacity:.8}
+:root:not([data-theme="dark"]) .invoice .sub{border-top-color:rgba(0,0,0,.16)}
+
+.yday{margin-top:14px; background:var(--surface); border:1px solid var(--hair); border-left:3px solid var(--accent);
+      border-radius:12px; box-shadow:var(--shadow); overflow:hidden}
+.yday-h{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+        padding:13px 18px 0}
+.yday-h .t{font-weight:600; font-size:14px}
+.yday-h .t span{font-family:"IBM Plex Mono",monospace; font-weight:400; color:var(--ink-3); font-size:12px; margin-left:8px}
+.yday-h .r{font-size:12.5px; color:var(--ink-3)}
+.yday-stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--hair); margin-top:13px}
+.yday-stats > div{background:var(--surface-2); padding:12px 18px}
+.yday-stats .v{font-size:19px; margin-top:3px}
+.yday-list{padding:11px 18px 14px; display:flex; flex-direction:column; gap:7px}
+.yday-list .r{display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:12px; align-items:center; font-size:13px}
+.yday-list .r .nm{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--ink-2)}
+.yday-list .r .mono{color:var(--ink)}
+@media (max-width:620px){ .yday-stats{grid-template-columns:repeat(2,1fr)} }
+
 .fn{display:flex; flex-direction:column; gap:11px}
 .fn-row{display:grid; grid-template-columns:150px minmax(0,1fr) auto; gap:14px; align-items:center}
 .fn-lbl{font-size:13.5px; color:var(--ink-2)}
@@ -151,7 +171,8 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <div class="band">
     <div class="band-top">
-      <div class="invoice"><div class="k">Amount spent</div><div class="v" id="kSpend">—</div></div>
+      <div class="invoice"><div class="k">Total billed</div><div class="v" id="kSpend">—</div>
+           <div class="sub" id="kGst">—</div></div>
       <div><div class="k">Calls placed</div><div class="v" id="kCalls">—</div></div>
       <div><div class="k">Cost per call</div><div class="v" id="kCPC">—</div></div>
     </div>
@@ -162,6 +183,8 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
       <div><div class="k">Cost per 60s call</div><div class="v" id="kCP60">—</div></div>
     </div>
   </div>
+
+  <div class="yday" id="yday"></div>
 
   <section>
     <div class="sec-h">
@@ -220,6 +243,9 @@ const CAMPS = [
   {n:"Pain Management · Sep 2026",   short:"Pain Mgmt", type:"calls", c:"#c2544a"}
 ];
 const LIVE = 4;
+const SNAP_DAY = "2026-09-11";        /* last day in the data (part-day) */
+const YDAY     = "2026-09-10";        /* the last complete day */
+const GST      = 0.18;                /* Meta bills 18% GST on ad spend in India */
 /* [campIdx, date, spend, placed, calls20s, calls60s, tapped, impressions, reach, linkClicks] */
 const DAILY = [
   [0,"2026-09-04",  55.49, 1, 1, 0,  1, 1092, 1016,  5],
@@ -251,13 +277,44 @@ function render(){
   const callRows  = R.filter(r=>CAMPS[r[0]].type==="calls");
   const callSpend = sum(callRows,SP);
 
-  kSpend.textContent = inr(T.spend);
+  const gst = T.spend * GST;
+  kSpend.innerHTML = inr(T.spend + gst) + "<small>incl. 18% GST</small>";
+  kGst.textContent = inr(T.spend) + " ad spend  +  " + inr(gst) + " GST";
   kCalls.textContent = num(T.placed);
-  kCPC.innerHTML = inr(callSpend/T.placed) + "<small>call campaigns only</small>";
+  kCPC.innerHTML = inr(callSpend/T.placed) + "<small>call campaigns, ex-GST</small>";
   k20.innerHTML  = num(T.c20) + `<small>${Math.round(100*T.c20/T.placed)}% of calls</small>`;
   k60.innerHTML  = num(T.c60) + `<small>${Math.round(100*T.c60/T.placed)}% of calls</small>`;
   kCP20.textContent = T.c20 ? inr(callSpend/T.c20) : "—";
   kCP60.textContent = T.c60 ? inr(callSpend/T.c60) : "—";
+
+  /* ---------- yesterday ---------- */
+  const yRows = R.filter(r=>r[1]===YDAY);
+  const yS = i => yRows.reduce((a,r)=>a+r[i],0);
+  if(yRows.length){
+    const ySpend = yS(SP), yGst = ySpend*GST;
+    const yCall  = yRows.filter(r=>CAMPS[r[0]].type==="calls");
+    const yCallSpend = yCall.reduce((a,r)=>a+r[SP],0);
+    yday.innerHTML = `
+      <div class="yday-h">
+        <div class="t">Yesterday <span>${dLbl(YDAY)}</span></div>
+        <div class="r">${dLbl(SNAP_DAY)} is still counting, so it is left out of this card</div>
+      </div>
+      <div class="yday-stats">
+        <div><div class="k">Billed</div><div class="v mono">${inr(ySpend+yGst)}</div></div>
+        <div><div class="k">Calls placed</div><div class="v mono">${yS(PL)}</div></div>
+        <div><div class="k">Lasted 20s+</div><div class="v mono">${yS(C20)}</div></div>
+        <div><div class="k">Cost per call</div><div class="v mono">${yS(PL)?inr(yCallSpend/yS(PL)):"—"}<small>ex-GST</small></div></div>
+      </div>
+      <div class="yday-list">` +
+      yRows.slice().sort((a,b)=>b[SP]-a[SP]).map(r=>`
+        <div class="r">
+          <div class="nm"><span class="swatch" style="background:${CAMPS[r[0]].c}"></span>${CAMPS[r[0]].n}</div>
+          <div class="mono">${inr(r[SP])}</div>
+          <div class="mono" style="min-width:92px;text-align:right">${
+            CAMPS[r[0]].type==="calls" ? `${r[PL]} call${r[PL]===1?"":"s"}${r[C20]?` · ${r[C20]} over 20s`:""}`
+                                       : `<span style="color:var(--ink-3)">no calls — website</span>`}</div>
+        </div>`).join("") + `</div>`;
+  } else { yday.style.display="none"; }
 
   /* ---------- duration funnel ---------- */
   const steps = [
