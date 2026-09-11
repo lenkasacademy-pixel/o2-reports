@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>O2 Health Hub · Calls Report</title>
+<!-- Standalone snapshot: Meta Ads figures frozen 11 Sep 2026. Account 924502380456661. No live connection. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --plane:#eef2f4; --surface:#ffffff; --surface-2:#f5f9fb; --sunk:#e7eef1;
+  --ink:#0b1519; --ink-2:#4a5a61; --ink-3:#84939a;
+  --hair:#dbe4e8; --rule:#c1ced4;
+  --brand:#0a4453; --brand-ink:#ffffff; --brand-soft:#e0edf1;
+  --accent:#0d8098;
+  --good:#0d7a63; --good-bg:#e0f1ed;
+  --warn:#8a5b00; --warn-bg:#f7ecd6;
+  --crit:#a8291f; --crit-bg:#f7e2e0;
+  --idle:#6a7a80; --idle-bg:#e9eef0;
+  --shadow:0 1px 2px rgba(11,21,25,.05), 0 10px 30px -22px rgba(11,21,25,.5);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --plane:#070b0d; --surface:#101719; --surface-2:#151d20; --sunk:#0c1214;
+    --ink:#edf3f5; --ink-2:#9fadb3; --ink-3:#738187;
+    --hair:#1e2629; --rule:#30383c;
+    --brand:#6fd8ee; --brand-ink:#05161b; --brand-soft:#122328;
+    --accent:#4cc6e0;
+    --good:#4fd1b4; --good-bg:#102824;
+    --warn:#e0ab48; --warn-bg:#2a2213;
+    --crit:#ee7f72; --crit-bg:#2d1815;
+    --idle:#7d8b91; --idle-bg:#19201f;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -22px rgba(0,0,0,1);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --plane:#070b0d; --surface:#101719; --surface-2:#151d20; --sunk:#0c1214;
+  --ink:#edf3f5; --ink-2:#9fadb3; --ink-3:#738187;
+  --hair:#1e2629; --rule:#30383c;
+  --brand:#6fd8ee; --brand-ink:#05161b; --brand-soft:#122328;
+  --accent:#4cc6e0;
+  --good:#4fd1b4; --good-bg:#102824;
+  --warn:#e0ab48; --warn-bg:#2a2213;
+  --crit:#ee7f72; --crit-bg:#2d1815;
+  --idle:#7d8b91; --idle-bg:#19201f;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 10px 30px -22px rgba(0,0,0,1);
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--plane); color:var(--ink);
+  font:400 15px/1.5 "IBM Plex Sans", system-ui, -apple-system, sans-serif; -webkit-font-smoothing:antialiased}
+.mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+.wrap{max-width:1140px; margin:0 auto; padding:34px 22px 90px}
+
+.mast{display:flex; flex-wrap:wrap; gap:18px 26px; align-items:flex-end; justify-content:space-between;
+      padding-bottom:18px; border-bottom:2px solid var(--rule)}
+.eyebrow{font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3)}
+h1{font-family:"Instrument Serif", Georgia, serif; font-weight:400; font-size:44px; line-height:1.02; margin:6px 0 0; letter-spacing:-.01em; text-wrap:balance}
+h1 em{font-style:italic; color:var(--accent)}
+.mast-r{display:flex; flex-direction:column; align-items:flex-end; gap:10px}
+.ranges{display:flex; border:1px solid var(--rule); border-radius:8px; overflow:hidden; background:var(--surface)}
+.ranges button{font:500 12.5px/1 "IBM Plex Sans",sans-serif; color:var(--ink-2); background:none; border:0;
+  border-right:1px solid var(--hair); padding:9px 13px; cursor:pointer}
+.ranges button:last-child{border-right:0}
+.ranges button:hover{background:var(--surface-2); color:var(--ink)}
+.ranges button[aria-pressed="true"]{background:var(--brand); color:var(--brand-ink)}
+.stamp{display:flex; align-items:center; gap:9px; font-size:12px; color:var(--ink-3)}
+.stamp .dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
+
+.band{margin:24px 0 0; background:var(--surface); border:1px solid var(--hair); border-radius:14px; box-shadow:var(--shadow); overflow:hidden}
+.band-top{display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:1px; background:var(--hair)}
+.band-top > div{background:var(--surface); padding:20px 22px}
+.band-top .invoice{background:var(--brand); color:var(--brand-ink)}
+.k{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3)}
+.invoice .k{color:var(--brand-ink); opacity:.72}
+.v{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-weight:500; font-size:27px; margin-top:5px; letter-spacing:-.02em}
+.invoice .v{font-size:34px; font-weight:600}
+.v small{font-size:13px; font-weight:400; color:var(--ink-3); margin-left:6px; letter-spacing:0}
+.invoice .v small{color:var(--brand-ink); opacity:.7}
+.band-btm{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--hair)}
+.band-btm > div{background:var(--surface-2); padding:14px 22px}
+.band-btm .v{font-size:19px}
+
+section{margin-top:34px}
+.sec-h{display:flex; align-items:baseline; gap:12px; margin:0 0 14px; flex-wrap:wrap}
+.sec-h h2{font-family:"Instrument Serif",Georgia,serif; font-weight:400; font-size:26px; margin:0; letter-spacing:-.01em}
+.sec-h .note{font-size:12.5px; color:var(--ink-3)}
+.card{background:var(--surface); border:1px solid var(--hair); border-radius:14px; box-shadow:var(--shadow); padding:20px 22px}
+
+.legend{display:flex; flex-wrap:wrap; gap:8px 18px; margin:0 0 14px; font-size:12.5px; color:var(--ink-2)}
+.legend span{display:flex; align-items:center; gap:7px}
+.legend i{width:11px; height:11px; border-radius:3px; display:block}
+.legend .lineKey{width:16px; height:0; border-top:2px solid var(--ink); border-radius:0}
+.scroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+svg.chart{display:block; min-width:660px; width:100%; height:auto}
+.gridline{stroke:var(--hair); stroke-width:1}
+.axis{fill:var(--ink-3); font-family:"IBM Plex Mono",monospace; font-size:10.5px}
+.axisL{fill:var(--ink-3); font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase}
+.callDot{fill:var(--surface); stroke:var(--ink); stroke-width:2}
+.callLbl{fill:var(--ink); font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:600; text-anchor:middle}
+
+table{width:100%; border-collapse:collapse; font-size:13.5px}
+th,td{padding:9px 11px; text-align:right; border-bottom:1px solid var(--hair); white-space:nowrap}
+th{font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); font-weight:500; vertical-align:bottom}
+th:first-child,td:first-child{text-align:left}
+tbody tr:hover{background:var(--surface-2)}
+tfoot td{font-weight:600; border-top:2px solid var(--rule); border-bottom:0}
+td.z{color:var(--ink-3)}
+.swatch{display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:8px; vertical-align:baseline}
+.break-row td{background:var(--sunk); color:var(--ink-3); font-size:11.5px; text-align:center; font-family:"IBM Plex Mono",monospace; letter-spacing:.08em; padding:6px}
+.tag{display:inline-block; font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+     padding:2px 7px; border-radius:20px; background:var(--idle-bg); color:var(--idle); margin-left:8px}
+.tag.calls{background:var(--good-bg); color:var(--good)}
+.tag.web{background:var(--warn-bg); color:var(--warn)}
+.tag.live{background:var(--brand-soft); color:var(--accent)}
+
+.notes{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
+.note-card{background:var(--surface); border:1px solid var(--hair); border-left:3px solid var(--accent); border-radius:11px; padding:16px 18px}
+.note-card.warn{border-left-color:var(--warn)}
+.note-card h3{margin:0 0 7px; font-size:14px; font-weight:600}
+.note-card p{margin:0; font-size:13.5px; color:var(--ink-2); line-height:1.55}
+footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font-size:12px; color:var(--ink-3); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap}
+@media (max-width:720px){
+  h1{font-size:32px}
+  .band-top{grid-template-columns:1fr}
+  .band-btm{grid-template-columns:repeat(2,1fr)}
+  .mast-r{align-items:flex-start}
+  .wrap{padding:24px 15px 60px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mast">
+    <div>
+      <div class="eyebrow">O2 Health Hub · Meta Ads</div>
+      <h1>Calls, and <em>what each one cost</em></h1>
+    </div>
+    <div class="mast-r">
+      <div class="ranges" role="group" aria-label="Period">
+        <button data-range="all" aria-pressed="true">All time</button>
+        <button data-range="sep" aria-pressed="false">September push</button>
+      </div>
+      <div class="stamp"><span class="dot"></span><span>Snapshot 11 Sep 2026 · account 924502380456661</span></div>
+    </div>
+  </div>
+
+  <div class="band">
+    <div class="band-top">
+      <div class="invoice"><div class="k">Amount spent</div><div class="v" id="kSpend">—</div></div>
+      <div><div class="k">Phone calls placed</div><div class="v" id="kCalls">—</div></div>
+      <div><div class="k">Cost per call</div><div class="v" id="kCPC">—</div></div>
+    </div>
+    <div class="band-btm">
+      <div><div class="k">Impressions</div><div class="v" id="kImp">—</div></div>
+      <div><div class="k">Reach</div><div class="v" id="kReach">—</div></div>
+      <div><div class="k">Link clicks</div><div class="v" id="kClicks">—</div></div>
+      <div><div class="k">Days with delivery</div><div class="v" id="kDays">—</div></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="sec-h">
+      <h2>Spend and calls, day by day</h2>
+      <span class="note">Bars are spend, split by campaign. The line is calls placed that day.</span>
+    </div>
+    <div class="card">
+      <div class="legend" id="legend"></div>
+      <div class="scroll"><svg class="chart" id="chart" viewBox="0 0 920 360" role="img"
+        aria-label="Daily advertising spend by campaign with phone calls placed overlaid"></svg></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-h">
+      <h2>Which campaign the calls came from</h2>
+      <span class="note">Calls placed per campaign, per day.</span>
+    </div>
+    <div class="card scroll"><table id="matrix"></table></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><h2>Campaign by campaign</h2></div>
+    <div class="card scroll"><table id="campTable"></table></div>
+  </section>
+
+  <section>
+    <div class="sec-h"><h2>Reading the numbers</h2></div>
+    <div class="notes" id="notes"></div>
+  </section>
+
+  <footer>
+    <span>O2 Health Hub · prepared by Lenka's Academy</span>
+    <span class="mono">Figures frozen 11 Sep 2026 · source: Meta Ads Manager</span>
+  </footer>
+</div>
+
+<script>
+/* ---- baked figures: Meta Ads, account 924502380456661, frozen 11 Sep 2026 ---- */
+const CAMPS = [
+  {n:"Autism",                     short:"Autism",     type:"calls", c:"#0d8098"},
+  {n:"O2 Guardian · NRI Elder Care",short:"NRI Elder", type:"web",   c:"#c98a12"},
+  {n:"Kukatpally Calls · Clean v2", short:"Kukatpally",type:"calls", c:"#7a5cc4"},
+  {n:"Endoscopy · 6 km radius",     short:"Endoscopy", type:"calls", c:"#0d7a63"},
+  {n:"Pain Management · Sep 2026",  short:"Pain Mgmt", type:"calls", c:"#c2544a"}
+];
+const LIVE = 4; /* still running at snapshot */
+/* [campIdx, date, spend, calls, impressions, reach, linkClicks] */
+const DAILY = [
+  [0,"2026-04-25", 847.45, 9,21712,18488,135],
+  [0,"2026-04-26",   0.00, 1,    0,    0,  0],
+  [0,"2026-04-27",  87.74, 1, 2282, 2114, 10],
+  [0,"2026-04-28", 759.72, 9,21618,17882,163],
+  [0,"2026-09-04",  55.49, 1, 1092, 1016,  5],
+  [1,"2026-09-04",1180.32, 0, 1361, 1249, 24],
+  [0,"2026-09-05", 623.79,17,17251,14636,128],
+  [1,"2026-09-05", 595.43, 0,  539,  449,  6],
+  [0,"2026-09-06",   0.00, 2,    0,    0,  0],
+  [1,"2026-09-06", 328.51, 0,  361,  285,  3],
+  [2,"2026-09-08", 502.22, 5,13566,11000, 82],
+  [3,"2026-09-09", 499.55,11, 7411, 5685, 33],
+  [1,"2026-09-10", 577.10, 0,  436,  391,  6],
+  [3,"2026-09-10", 494.95, 9, 8811, 7346, 37],
+  [4,"2026-09-10", 168.32, 3, 1402, 1184,  9],
+  [4,"2026-09-11",  11.24, 0,  150,  129,  0]
+];
+
+const inr = n => "₹" + n.toLocaleString("en-IN",{minimumFractionDigits:2,maximumFractionDigits:2});
+const inr0= n => "₹" + Math.round(n).toLocaleString("en-IN");
+const num = n => n.toLocaleString("en-IN");
+const dLbl= d => { const m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+                   const p=d.split("-"); return (+p[2])+" "+m[+p[1]-1]; };
+
+let RANGE = "all";
+const rows = () => RANGE==="sep" ? DAILY.filter(r=>r[1]>="2026-09-01") : DAILY;
+
+function render(){
+  const R = rows();
+  const dates = [...new Set(R.map(r=>r[1]))].sort();
+
+  /* ---------- totals ---------- */
+  const T = {spend:0, calls:0, imp:0, reach:0, clicks:0};
+  R.forEach(r=>{ T.spend+=r[2]; T.calls+=r[3]; T.imp+=r[4]; T.reach+=r[5]; T.clicks+=r[6]; });
+  const callSpend = R.filter(r=>CAMPS[r[0]].type==="calls").reduce((a,r)=>a+r[2],0);
+
+  kSpend.textContent = inr(T.spend);
+  kCalls.textContent = num(T.calls);
+  kCPC.innerHTML = (T.calls? inr(callSpend/T.calls):"—") + "<small>call campaigns only</small>";
+  kImp.textContent  = num(T.imp);
+  kReach.innerHTML  = num(T.reach) + "<small>sum of days</small>";
+  kClicks.textContent = num(T.clicks);
+  kDays.textContent = dates.length;
+
+  /* ---------- per campaign ---------- */
+  const per = CAMPS.map((c,i)=>{
+    const rs = R.filter(r=>r[0]===i);
+    const o = {i, c, spend:0, calls:0, imp:0, reach:0, clicks:0, days:rs.length,
+               first:rs.length?rs[0][1]:null, last:rs.length?rs[rs.length-1][1]:null};
+    rs.forEach(r=>{ o.spend+=r[2]; o.calls+=r[3]; o.imp+=r[4]; o.reach+=r[5]; o.clicks+=r[6]; });
+    return o;
+  }).filter(o=>o.days>0);
+
+  /* ---------- legend ---------- */
+  legend.innerHTML = per.map(o=>
+      `<span><i style="background:${o.c.c}"></i>${o.c.short}</span>`).join("")
+    + `<span><i class="lineKey"></i>Calls placed</span>`;
+
+  /* ---------- chart ---------- */
+  drawChart(dates, R);
+
+  /* ---------- matrix ---------- */
+  const cols = per.map(o=>o.i);
+  let head = "<thead><tr><th>Day</th>" + cols.map(i=>
+      `<th><span class="swatch" style="background:${CAMPS[i].c}"></span>${CAMPS[i].short}</th>`).join("")
+      + "<th>Calls</th><th>Spent</th></tr></thead><tbody>";
+  let body = "", prev = null;
+  dates.forEach(d=>{
+    if(prev && gapDays(prev,d)>7) body += `<tr class="break-row"><td colspan="${cols.length+3}">no delivery ${dLbl(prev)} → ${dLbl(d)}</td></tr>`;
+    prev = d;
+    const day = R.filter(r=>r[1]===d);
+    const dc = day.reduce((a,r)=>a+r[3],0), ds = day.reduce((a,r)=>a+r[2],0);
+    body += `<tr><td class="mono">${dLbl(d)}</td>` + cols.map(i=>{
+      const hit = day.find(r=>r[0]===i);
+      if(!hit) return `<td class="mono z">·</td>`;
+      return `<td class="mono${hit[3]?"":" z"}">${hit[3]||"0"}</td>`;
+    }).join("") + `<td class="mono"><b>${dc}</b></td><td class="mono">${inr0(ds)}</td></tr>`;
+  });
+  const tc = R.reduce((a,r)=>a+r[3],0), ts = R.reduce((a,r)=>a+r[2],0);
+  let foot = `<tfoot><tr><td>Total</td>` + cols.map(i=>
+      `<td class="mono">${R.filter(r=>r[0]===i).reduce((a,r)=>a+r[3],0)}</td>`).join("")
+      + `<td class="mono">${tc}</td><td class="mono">${inr0(ts)}</td></tr></tfoot>`;
+  matrix.innerHTML = head + body + "</tbody>" + foot;
+
+  /* ---------- campaign table ---------- */
+  let ch = `<thead><tr><th>Campaign</th><th>Active</th><th>Spent</th><th>Calls</th>
+            <th>Cost / call</th><th>Impressions</th><th>Link clicks</th></tr></thead><tbody>`;
+  let cb = per.sort((a,b)=>b.spend-a.spend).map(o=>{
+    const isCall = o.c.type==="calls";
+    const tag = isCall ? "" : `<span class="tag web">website</span>`;
+    const live = o.i===LIVE ? `<span class="tag live">live</span>` : "";
+    const cpc = isCall ? (o.calls? inr(o.spend/o.calls) : "—") : "—";
+    return `<tr><td><span class="swatch" style="background:${o.c.c}"></span>${o.c.n}${tag}${live}</td>
+      <td class="mono">${o.days} ${o.days===1?"day":"days"}</td>
+      <td class="mono">${inr(o.spend)}</td>
+      <td class="mono${o.calls?"":" z"}">${o.calls}</td>
+      <td class="mono">${cpc}</td>
+      <td class="mono">${num(o.imp)}</td>
+      <td class="mono">${num(o.clicks)}</td></tr>`;
+  }).join("");
+  let cf = `<tfoot><tr><td>Total</td><td class="mono">${dates.length} days</td>
+      <td class="mono">${inr(ts)}</td><td class="mono">${tc}</td>
+      <td class="mono">${tc?inr(callSpend/tc):"—"}</td>
+      <td class="mono">${num(T.imp)}</td><td class="mono">${num(T.clicks)}</td></tr></tfoot>`;
+  campTable.innerHTML = ch + cb + "</tbody>" + cf;
+
+  /* ---------- notes ---------- */
+  const best = per.filter(o=>o.c.type==="calls" && o.calls>0)
+                  .sort((a,b)=>(a.spend/a.calls)-(b.spend/b.calls))[0];
+  const web  = per.find(o=>o.c.type==="web");
+  const cards = [];
+  if(best) cards.push({t:`Cheapest calls: ${best.c.short}`,
+    b:`${best.calls} calls for ${inr(best.spend)} — <b>${inr(best.spend/best.calls)} per call</b>, against ${inr(callSpend/tc)} across all call campaigns.`});
+  cards.push({t:"What a “call” counts as",
+    b:`Meta's <i>phone calls placed</i>: someone tapped the call button and the dialler actually placed the call. It does not tell us whether the call was answered at the clinic, so treat it as the top of the funnel.`});
+  if(web && web.spend>0) cards.push({w:1, t:`${web.c.short}: ${inr(web.spend)}, nothing tracked back`,
+    b:`This one sends people to the website rather than the phone, so it books no calls by design. Its own goal — the <span class="mono">HEnquiry</span> website event — is reporting <b>no conversions at all</b>, on ${num(web.clicks)} link clicks. Either the enquiry form isn't firing the event, or the traffic isn't converting. Worth settling before it runs again.`});
+  notes.innerHTML = cards.map(c=>
+    `<div class="note-card${c.w?" warn":""}"><h3>${c.t}</h3><p>${c.b}</p></div>`).join("");
+}
+
+function gapDays(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+
+function drawChart(dates, R){
+  const W=920,H=360, L=62,Rp=52,Tp=22,B=54;
+  const iw=W-L-Rp, ih=H-Tp-B;
+  const maxSpend = Math.max(...dates.map(d=>R.filter(r=>r[1]===d).reduce((a,r)=>a+r[2],0)));
+  const maxCalls = Math.max(...dates.map(d=>R.filter(r=>r[1]===d).reduce((a,r)=>a+r[3],0)));
+  const sTop = Math.ceil(maxSpend/250)*250 || 250;
+  const cTop = Math.max(Math.ceil(maxCalls/5)*5, 5);
+  const step = iw/dates.length, bw = Math.min(34, step*0.56);
+  const x = i => L + step*i + step/2;
+  const ys = v => Tp + ih - (v/sTop)*ih;
+  const yc = v => Tp + ih - (v/cTop)*ih;
+  let s = "";
+
+  for(let g=0; g<=4; g++){
+    const v = sTop*g/4, y = ys(v);
+    s += `<line class="gridline" x1="${L}" y1="${y.toFixed(1)}" x2="${L+iw}" y2="${y.toFixed(1)}"/>`;
+    s += `<text class="axis" x="${L-9}" y="${(y+3.5).toFixed(1)}" text-anchor="end">${Math.round(v)}</text>`;
+    const cv = cTop*g/4;
+    s += `<text class="axis" x="${L+iw+9}" y="${(y+3.5).toFixed(1)}" text-anchor="start">${Math.round(cv)}</text>`;
+  }
+  s += `<text class="axisL" x="${L-9}" y="${Tp-8}" text-anchor="end">Spend ₹</text>`;
+  s += `<text class="axisL" x="${L+iw+9}" y="${Tp-8}" text-anchor="start">Calls</text>`;
+
+  dates.forEach((d,i)=>{
+    const day = R.filter(r=>r[1]===d);
+    let acc = 0;
+    day.forEach(r=>{
+      if(r[2]<=0) return;
+      const y0 = ys(acc), y1 = ys(acc+r[2]);
+      s += `<rect x="${(x(i)-bw/2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1,y0-y1).toFixed(1)}" fill="${CAMPS[r[0]].c}" rx="2"><title>${dLbl(d)} — ${CAMPS[r[0]].short}: ${inr(r[2])}, ${r[3]} calls</title></rect>`;
+      acc += r[2];
+    });
+    s += `<text class="axis" x="${x(i).toFixed(1)}" y="${H-B+18}" text-anchor="middle">${dLbl(d).split(" ")[0]}</text>`;
+    s += `<text class="axis" x="${x(i).toFixed(1)}" y="${H-B+31}" text-anchor="middle" opacity=".7">${dLbl(d).split(" ")[1]}</text>`;
+  });
+
+  const pts = dates.map((d,i)=>[x(i), yc(R.filter(r=>r[1]===d).reduce((a,r)=>a+r[3],0))]);
+  s += `<polyline fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        points="${pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ")}"/>`;
+  dates.forEach((d,i)=>{
+    const c = R.filter(r=>r[1]===d).reduce((a,r)=>a+r[3],0);
+    s += `<circle class="callDot" cx="${pts[i][0].toFixed(1)}" cy="${pts[i][1].toFixed(1)}" r="4"><title>${dLbl(d)}: ${c} calls</title></circle>`;
+    if(c>0) s += `<text class="callLbl" x="${pts[i][0].toFixed(1)}" y="${(pts[i][1]-10).toFixed(1)}">${c}</text>`;
+  });
+  s += `<line class="gridline" x1="${L}" y1="${Tp+ih}" x2="${L+iw}" y2="${Tp+ih}" stroke="var(--rule)"/>`;
+  /* axis break wherever the account went dark for more than a week */
+  dates.forEach((d,i)=>{
+    if(i===0 || gapDays(dates[i-1],d)<=7) return;
+    const xm = (x(i-1)+x(i))/2;
+    s += `<g><rect x="${(xm-6).toFixed(1)}" y="${Tp-4}" width="12" height="${ih+10}" fill="var(--surface)"/>`
+       + `<line x1="${(xm-7).toFixed(1)}" y1="${Tp+ih+7}" x2="${(xm+1).toFixed(1)}" y2="${Tp+ih-7}" stroke="var(--rule)" stroke-width="1.5"/>`
+       + `<line x1="${(xm-1).toFixed(1)}" y1="${Tp+ih+7}" x2="${(xm+7).toFixed(1)}" y2="${Tp+ih-7}" stroke="var(--rule)" stroke-width="1.5"/>`
+       + `<title>No delivery between ${dLbl(dates[i-1])} and ${dLbl(d)}</title></g>`;
+  });
+  chart.innerHTML = s;
+}
+
+document.querySelectorAll(".ranges button").forEach(b=>{
+  b.addEventListener("click",()=>{
+    RANGE = b.dataset.range;
+    document.querySelectorAll(".ranges button").forEach(o=>o.setAttribute("aria-pressed", String(o===b)));
+    render();
+  });
+});
+render();
+</script>
+</body>
+</html>
