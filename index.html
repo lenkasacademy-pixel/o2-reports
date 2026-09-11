@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O2 Health Hub · Calls Report</title>
-<!-- Standalone snapshot: Meta Ads figures frozen 11 Sep 2026. Account 924502380456661. No live connection. -->
+<!-- Standalone snapshot: Meta Ads figures frozen 11 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -63,12 +63,6 @@ body{margin:0; background:var(--plane); color:var(--ink);
 h1{font-family:"Instrument Serif", Georgia, serif; font-weight:400; font-size:44px; line-height:1.02; margin:6px 0 0; letter-spacing:-.01em; text-wrap:balance}
 h1 em{font-style:italic; color:var(--accent)}
 .mast-r{display:flex; flex-direction:column; align-items:flex-end; gap:10px}
-.ranges{display:flex; border:1px solid var(--rule); border-radius:8px; overflow:hidden; background:var(--surface)}
-.ranges button{font:500 12.5px/1 "IBM Plex Sans",sans-serif; color:var(--ink-2); background:none; border:0;
-  border-right:1px solid var(--hair); padding:9px 13px; cursor:pointer}
-.ranges button:last-child{border-right:0}
-.ranges button:hover{background:var(--surface-2); color:var(--ink)}
-.ranges button[aria-pressed="true"]{background:var(--brand); color:var(--brand-ink)}
 .stamp{display:flex; align-items:center; gap:9px; font-size:12px; color:var(--ink-3)}
 .stamp .dot{width:6px;height:6px;border-radius:50%;background:var(--good)}
 
@@ -119,6 +113,14 @@ td.z{color:var(--ink-3)}
 .tag.web{background:var(--warn-bg); color:var(--warn)}
 .tag.live{background:var(--brand-soft); color:var(--accent)}
 
+.fn{display:flex; flex-direction:column; gap:11px}
+.fn-row{display:grid; grid-template-columns:150px minmax(0,1fr) auto; gap:14px; align-items:center}
+.fn-lbl{font-size:13.5px; color:var(--ink-2)}
+.fn-track{background:var(--sunk); border-radius:6px; height:30px; overflow:hidden}
+.fn-fill{height:100%; border-radius:6px; display:flex; align-items:center; padding:0 11px;
+         font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:13px; color:var(--brand-ink); min-width:34px}
+.fn-pct{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink-3); white-space:nowrap}
+@media (max-width:620px){ .fn-row{grid-template-columns:1fr; gap:4px} .fn-pct{text-align:right} }
 .notes{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
 .note-card{background:var(--surface); border:1px solid var(--hair); border-left:3px solid var(--accent); border-radius:11px; padding:16px 18px}
 .note-card.warn{border-left-color:var(--warn)}
@@ -139,14 +141,10 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <div class="mast">
     <div>
-      <div class="eyebrow">O2 Health Hub · Meta Ads</div>
+      <div class="eyebrow">O2 Health Hub · Meta Ads · September 2026</div>
       <h1>Calls, and <em>what each one cost</em></h1>
     </div>
     <div class="mast-r">
-      <div class="ranges" role="group" aria-label="Period">
-        <button data-range="all" aria-pressed="true">All time</button>
-        <button data-range="sep" aria-pressed="false">September push</button>
-      </div>
       <div class="stamp"><span class="dot"></span><span>Snapshot 11 Sep 2026 · account 924502380456661</span></div>
     </div>
   </div>
@@ -154,21 +152,29 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
   <div class="band">
     <div class="band-top">
       <div class="invoice"><div class="k">Amount spent</div><div class="v" id="kSpend">—</div></div>
-      <div><div class="k">Phone calls placed</div><div class="v" id="kCalls">—</div></div>
+      <div><div class="k">Calls placed</div><div class="v" id="kCalls">—</div></div>
       <div><div class="k">Cost per call</div><div class="v" id="kCPC">—</div></div>
     </div>
     <div class="band-btm">
-      <div><div class="k">Impressions</div><div class="v" id="kImp">—</div></div>
-      <div><div class="k">Reach</div><div class="v" id="kReach">—</div></div>
-      <div><div class="k">Link clicks</div><div class="v" id="kClicks">—</div></div>
-      <div><div class="k">Days with delivery</div><div class="v" id="kDays">—</div></div>
+      <div><div class="k">Calls 20s or longer</div><div class="v" id="k20">—</div></div>
+      <div><div class="k">Calls 60s or longer</div><div class="v" id="k60">—</div></div>
+      <div><div class="k">Cost per 20s call</div><div class="v" id="kCP20">—</div></div>
+      <div><div class="k">Cost per 60s call</div><div class="v" id="kCP60">—</div></div>
     </div>
   </div>
 
   <section>
     <div class="sec-h">
+      <h2>How many calls actually became conversations</h2>
+      <span class="note">Meta reports how long each call stayed connected.</span>
+    </div>
+    <div class="card"><div id="funnel"></div></div>
+  </section>
+
+  <section>
+    <div class="sec-h">
       <h2>Spend and calls, day by day</h2>
-      <span class="note">Bars are spend, split by campaign. The line is calls placed that day.</span>
+      <span class="note">Bars are spend, split by campaign. Solid line is calls placed; dashed line is the ones that lasted 20s+.</span>
     </div>
     <div class="card">
       <div class="legend" id="legend"></div>
@@ -180,7 +186,7 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
   <section>
     <div class="sec-h">
       <h2>Which campaign the calls came from</h2>
-      <span class="note">Calls placed per campaign, per day.</span>
+      <span class="note">Calls placed per campaign, with how many held for 20 and 60 seconds.</span>
     </div>
     <div class="card scroll"><table id="matrix"></table></div>
   </section>
@@ -197,39 +203,39 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <footer>
     <span>O2 Health Hub · prepared by Lenka's Academy</span>
-    <span class="mono">Figures frozen 11 Sep 2026 · source: Meta Ads Manager</span>
+    <span class="mono">September 2026 · frozen 11 Sep · source: Meta Ads Manager</span>
   </footer>
 </div>
 
 <script>
-/* ---- baked figures: Meta Ads, account 924502380456661, frozen 11 Sep 2026 ---- */
+/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 11 Sep 2026 ----
+   20s/60s counts are derived as spend ÷ cost_per_action_type for
+   click_to_call_native_20s_call_connect / _60s_call_connect. Every division lands
+   on a whole number and the per-campaign sums equal Meta's own period totals. */
 const CAMPS = [
-  {n:"Autism",                     short:"Autism",     type:"calls", c:"#0d8098"},
-  {n:"O2 Guardian · NRI Elder Care",short:"NRI Elder", type:"web",   c:"#c98a12"},
-  {n:"Kukatpally Calls · Clean v2", short:"Kukatpally",type:"calls", c:"#7a5cc4"},
-  {n:"Endoscopy · 6 km radius",     short:"Endoscopy", type:"calls", c:"#0d7a63"},
-  {n:"Pain Management · Sep 2026",  short:"Pain Mgmt", type:"calls", c:"#c2544a"}
+  {n:"Autism",                      short:"Autism",     type:"calls", c:"#0d8098"},
+  {n:"O2 Guardian · NRI Elder Care", short:"NRI Elder", type:"web",   c:"#c98a12"},
+  {n:"Kukatpally Calls · Clean v2",  short:"Kukatpally",type:"calls", c:"#7a5cc4"},
+  {n:"Endoscopy · 6 km radius",      short:"Endoscopy", type:"calls", c:"#0d7a63"},
+  {n:"Pain Management · Sep 2026",   short:"Pain Mgmt", type:"calls", c:"#c2544a"}
 ];
-const LIVE = 4; /* still running at snapshot */
-/* [campIdx, date, spend, calls, impressions, reach, linkClicks] */
+const LIVE = 4;
+/* [campIdx, date, spend, placed, calls20s, calls60s, tapped, impressions, reach, linkClicks] */
 const DAILY = [
-  [0,"2026-04-25", 847.45, 9,21712,18488,135],
-  [0,"2026-04-26",   0.00, 1,    0,    0,  0],
-  [0,"2026-04-27",  87.74, 1, 2282, 2114, 10],
-  [0,"2026-04-28", 759.72, 9,21618,17882,163],
-  [0,"2026-09-04",  55.49, 1, 1092, 1016,  5],
-  [1,"2026-09-04",1180.32, 0, 1361, 1249, 24],
-  [0,"2026-09-05", 623.79,17,17251,14636,128],
-  [1,"2026-09-05", 595.43, 0,  539,  449,  6],
-  [0,"2026-09-06",   0.00, 2,    0,    0,  0],
-  [1,"2026-09-06", 328.51, 0,  361,  285,  3],
-  [2,"2026-09-08", 502.22, 5,13566,11000, 82],
-  [3,"2026-09-09", 499.55,11, 7411, 5685, 33],
-  [1,"2026-09-10", 577.10, 0,  436,  391,  6],
-  [3,"2026-09-10", 494.95, 9, 8811, 7346, 37],
-  [4,"2026-09-10", 168.32, 3, 1402, 1184,  9],
-  [4,"2026-09-11",  11.24, 0,  150,  129,  0]
+  [0,"2026-09-04",  55.49, 1, 1, 0,  1, 1092, 1016,  5],
+  [1,"2026-09-04",1180.32, 0, 0, 0,  0, 1361, 1249, 24],
+  [0,"2026-09-05", 623.79,17, 5, 4, 20,17251,14636,128],
+  [1,"2026-09-05", 595.43, 0, 0, 0,  0,  539,  449,  6],
+  [0,"2026-09-06",   0.00, 2, 0, 0,  0,    0,    0,  0],
+  [1,"2026-09-06", 328.51, 0, 0, 0,  0,  361,  285,  3],
+  [2,"2026-09-08", 502.22, 5, 1, 1,  8,13566,11000, 82],
+  [3,"2026-09-09", 499.55,11, 2, 2, 16, 7411, 5685, 33],
+  [1,"2026-09-10", 577.64, 0, 0, 0,  0,  437,  391,  6],
+  [3,"2026-09-10", 495.02, 9, 1, 0, 11, 8814, 7355, 37],
+  [4,"2026-09-10", 169.25, 3, 0, 0,  3, 1403, 1185,  9],
+  [4,"2026-09-11",  11.79, 0, 0, 0,  0,  164,  142,  0]
 ];
+const SP=2, PL=3, C20=4, C60=5, TAP=6, IMP=7, RCH=8, CLK=9;
 
 const inr = n => "₹" + n.toLocaleString("en-IN",{minimumFractionDigits:2,maximumFractionDigits:2});
 const inr0= n => "₹" + Math.round(n).toLocaleString("en-IN");
@@ -237,169 +243,169 @@ const num = n => n.toLocaleString("en-IN");
 const dLbl= d => { const m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
                    const p=d.split("-"); return (+p[2])+" "+m[+p[1]-1]; };
 
-let RANGE = "all";
-const rows = () => RANGE==="sep" ? DAILY.filter(r=>r[1]>="2026-09-01") : DAILY;
-
 function render(){
-  const R = rows();
-  const dates = [...new Set(R.map(r=>r[1]))].sort();
-
-  /* ---------- totals ---------- */
-  const T = {spend:0, calls:0, imp:0, reach:0, clicks:0};
-  R.forEach(r=>{ T.spend+=r[2]; T.calls+=r[3]; T.imp+=r[4]; T.reach+=r[5]; T.clicks+=r[6]; });
-  const callSpend = R.filter(r=>CAMPS[r[0]].type==="calls").reduce((a,r)=>a+r[2],0);
+  const R = DAILY, dates = [...new Set(R.map(r=>r[1]))].sort();
+  const sum = (rows,i) => rows.reduce((a,r)=>a+r[i],0);
+  const T = {spend:sum(R,SP), placed:sum(R,PL), c20:sum(R,C20), c60:sum(R,C60),
+             tap:sum(R,TAP), imp:sum(R,IMP), clk:sum(R,CLK)};
+  const callRows  = R.filter(r=>CAMPS[r[0]].type==="calls");
+  const callSpend = sum(callRows,SP);
 
   kSpend.textContent = inr(T.spend);
-  kCalls.textContent = num(T.calls);
-  kCPC.innerHTML = (T.calls? inr(callSpend/T.calls):"—") + "<small>call campaigns only</small>";
-  kImp.textContent  = num(T.imp);
-  kReach.innerHTML  = num(T.reach) + "<small>sum of days</small>";
-  kClicks.textContent = num(T.clicks);
-  kDays.textContent = dates.length;
+  kCalls.textContent = num(T.placed);
+  kCPC.innerHTML = inr(callSpend/T.placed) + "<small>call campaigns only</small>";
+  k20.innerHTML  = num(T.c20) + `<small>${Math.round(100*T.c20/T.placed)}% of calls</small>`;
+  k60.innerHTML  = num(T.c60) + `<small>${Math.round(100*T.c60/T.placed)}% of calls</small>`;
+  kCP20.textContent = T.c20 ? inr(callSpend/T.c20) : "—";
+  kCP60.textContent = T.c60 ? inr(callSpend/T.c60) : "—";
+
+  /* ---------- duration funnel ---------- */
+  const steps = [
+    {l:"Calls placed",      v:T.placed, c:"var(--accent)"},
+    {l:"Lasted 20s or more", v:T.c20,   c:"var(--good)"},
+    {l:"Lasted 60s or more", v:T.c60,   c:"var(--warn)"}
+  ];
+  funnel.innerHTML = `<div class="fn">` + steps.map(st=>`
+    <div class="fn-row">
+      <div class="fn-lbl">${st.l}</div>
+      <div class="fn-track"><div class="fn-fill" style="width:${Math.max(4,100*st.v/T.placed)}%;background:${st.c}">${st.v}</div></div>
+      <div class="fn-pct">${Math.round(100*st.v/T.placed)}% · ${st.v?inr(callSpend/st.v):"—"} each</div>
+    </div>`).join("") + `</div>
+    <p style="margin:14px 0 0;font-size:13px;color:var(--ink-3);line-height:1.55">
+      Meta counts a call as <i>placed</i> the moment the dialler fires. The 20- and 60-second
+      figures are how many of those stayed connected that long — the closest thing in the data
+      to a real conversation. Two calls on 6 Sep arrived with no spend behind them (delayed
+      attribution) and carry no duration, so they sit in “placed” only.</p>`;
 
   /* ---------- per campaign ---------- */
   const per = CAMPS.map((c,i)=>{
-    const rs = R.filter(r=>r[0]===i);
-    const o = {i, c, spend:0, calls:0, imp:0, reach:0, clicks:0, days:rs.length,
-               first:rs.length?rs[0][1]:null, last:rs.length?rs[rs.length-1][1]:null};
-    rs.forEach(r=>{ o.spend+=r[2]; o.calls+=r[3]; o.imp+=r[4]; o.reach+=r[5]; o.clicks+=r[6]; });
-    return o;
-  }).filter(o=>o.days>0);
+    const rs = R.filter(r=>r[0]===i); if(!rs.length) return null;
+    return {i, c, days:rs.length, spend:sum(rs,SP), placed:sum(rs,PL), c20:sum(rs,C20),
+            c60:sum(rs,C60), tap:sum(rs,TAP), imp:sum(rs,IMP), clk:sum(rs,CLK)};
+  }).filter(Boolean);
 
-  /* ---------- legend ---------- */
-  legend.innerHTML = per.map(o=>
-      `<span><i style="background:${o.c.c}"></i>${o.c.short}</span>`).join("")
-    + `<span><i class="lineKey"></i>Calls placed</span>`;
+  legend.innerHTML = per.map(o=>`<span><i style="background:${o.c.c}"></i>${o.c.short}</span>`).join("")
+    + `<span><i class="lineKey"></i>Calls placed</span>`
+    + `<span><i class="lineKey" style="border-top-style:dashed"></i>Lasted 20s+</span>`;
 
-  /* ---------- chart ---------- */
   drawChart(dates, R);
 
-  /* ---------- matrix ---------- */
+  /* ---------- daily matrix ---------- */
   const cols = per.map(o=>o.i);
-  let head = "<thead><tr><th>Day</th>" + cols.map(i=>
+  let head = `<thead><tr><th>Day</th>` + cols.map(i=>
       `<th><span class="swatch" style="background:${CAMPS[i].c}"></span>${CAMPS[i].short}</th>`).join("")
-      + "<th>Calls</th><th>Spent</th></tr></thead><tbody>";
-  let body = "", prev = null;
-  dates.forEach(d=>{
-    if(prev && gapDays(prev,d)>7) body += `<tr class="break-row"><td colspan="${cols.length+3}">no delivery ${dLbl(prev)} → ${dLbl(d)}</td></tr>`;
-    prev = d;
+      + `<th>Calls</th><th>20s+</th><th>60s+</th><th>Spent</th></tr></thead><tbody>`;
+  let body = dates.map(d=>{
     const day = R.filter(r=>r[1]===d);
-    const dc = day.reduce((a,r)=>a+r[3],0), ds = day.reduce((a,r)=>a+r[2],0);
-    body += `<tr><td class="mono">${dLbl(d)}</td>` + cols.map(i=>{
+    return `<tr><td class="mono">${dLbl(d)}</td>` + cols.map(i=>{
       const hit = day.find(r=>r[0]===i);
       if(!hit) return `<td class="mono z">·</td>`;
-      return `<td class="mono${hit[3]?"":" z"}">${hit[3]||"0"}</td>`;
-    }).join("") + `<td class="mono"><b>${dc}</b></td><td class="mono">${inr0(ds)}</td></tr>`;
-  });
-  const tc = R.reduce((a,r)=>a+r[3],0), ts = R.reduce((a,r)=>a+r[2],0);
+      return `<td class="mono${hit[PL]?"":" z"}">${hit[PL]}</td>`;
+    }).join("")
+      + `<td class="mono"><b>${sum(day,PL)}</b></td>`
+      + `<td class="mono${sum(day,C20)?"":" z"}">${sum(day,C20)}</td>`
+      + `<td class="mono${sum(day,C60)?"":" z"}">${sum(day,C60)}</td>`
+      + `<td class="mono">${inr0(sum(day,SP))}</td></tr>`;
+  }).join("");
   let foot = `<tfoot><tr><td>Total</td>` + cols.map(i=>
-      `<td class="mono">${R.filter(r=>r[0]===i).reduce((a,r)=>a+r[3],0)}</td>`).join("")
-      + `<td class="mono">${tc}</td><td class="mono">${inr0(ts)}</td></tr></tfoot>`;
+      `<td class="mono">${sum(R.filter(r=>r[0]===i),PL)}</td>`).join("")
+      + `<td class="mono">${T.placed}</td><td class="mono">${T.c20}</td>`
+      + `<td class="mono">${T.c60}</td><td class="mono">${inr0(T.spend)}</td></tr></tfoot>`;
   matrix.innerHTML = head + body + "</tbody>" + foot;
 
   /* ---------- campaign table ---------- */
-  let ch = `<thead><tr><th>Campaign</th><th>Active</th><th>Spent</th><th>Calls</th>
-            <th>Cost / call</th><th>Impressions</th><th>Link clicks</th></tr></thead><tbody>`;
-  let cb = per.sort((a,b)=>b.spend-a.spend).map(o=>{
+  let ch = `<thead><tr><th>Campaign</th><th>Active</th><th>Spent</th><th>Calls</th><th>20s+</th>
+            <th>60s+</th><th>Cost / call</th><th>Cost / 20s call</th><th>Link clicks</th></tr></thead><tbody>`;
+  let cb = per.slice().sort((a,b)=>b.spend-a.spend).map(o=>{
     const isCall = o.c.type==="calls";
     const tag = isCall ? "" : `<span class="tag web">website</span>`;
     const live = o.i===LIVE ? `<span class="tag live">live</span>` : "";
-    const cpc = isCall ? (o.calls? inr(o.spend/o.calls) : "—") : "—";
     return `<tr><td><span class="swatch" style="background:${o.c.c}"></span>${o.c.n}${tag}${live}</td>
       <td class="mono">${o.days} ${o.days===1?"day":"days"}</td>
       <td class="mono">${inr(o.spend)}</td>
-      <td class="mono${o.calls?"":" z"}">${o.calls}</td>
-      <td class="mono">${cpc}</td>
-      <td class="mono">${num(o.imp)}</td>
-      <td class="mono">${num(o.clicks)}</td></tr>`;
+      <td class="mono${o.placed?"":" z"}">${o.placed}</td>
+      <td class="mono${o.c20?"":" z"}">${isCall?o.c20:"—"}</td>
+      <td class="mono${o.c60?"":" z"}">${isCall?o.c60:"—"}</td>
+      <td class="mono">${isCall&&o.placed? inr(o.spend/o.placed):"—"}</td>
+      <td class="mono">${isCall&&o.c20? inr(o.spend/o.c20):"—"}</td>
+      <td class="mono">${num(o.clk)}</td></tr>`;
   }).join("");
   let cf = `<tfoot><tr><td>Total</td><td class="mono">${dates.length} days</td>
-      <td class="mono">${inr(ts)}</td><td class="mono">${tc}</td>
-      <td class="mono">${tc?inr(callSpend/tc):"—"}</td>
-      <td class="mono">${num(T.imp)}</td><td class="mono">${num(T.clicks)}</td></tr></tfoot>`;
+      <td class="mono">${inr(T.spend)}</td><td class="mono">${T.placed}</td>
+      <td class="mono">${T.c20}</td><td class="mono">${T.c60}</td>
+      <td class="mono">${inr(callSpend/T.placed)}</td>
+      <td class="mono">${inr(callSpend/T.c20)}</td>
+      <td class="mono">${num(T.clk)}</td></tr></tfoot>`;
   campTable.innerHTML = ch + cb + "</tbody>" + cf;
 
   /* ---------- notes ---------- */
-  const best = per.filter(o=>o.c.type==="calls" && o.calls>0)
-                  .sort((a,b)=>(a.spend/a.calls)-(b.spend/b.calls))[0];
+  const best = per.filter(o=>o.c.type==="calls" && o.c20>0)
+                  .sort((a,b)=>(a.spend/a.c20)-(b.spend/b.c20))[0];
   const web  = per.find(o=>o.c.type==="web");
   const cards = [];
-  if(best) cards.push({t:`Cheapest calls: ${best.c.short}`,
-    b:`${best.calls} calls for ${inr(best.spend)} — <b>${inr(best.spend/best.calls)} per call</b>, against ${inr(callSpend/tc)} across all call campaigns.`});
-  cards.push({t:"What a “call” counts as",
-    b:`Meta's <i>phone calls placed</i>: someone tapped the call button and the dialler actually placed the call. It does not tell us whether the call was answered at the clinic, so treat it as the top of the funnel.`});
+  cards.push({t:"A ₹" + Math.round(callSpend/T.placed) + " call is really a ₹" + Math.round(callSpend/T.c20) + " conversation",
+    b:`${T.placed} calls were placed, but only <b>${T.c20}</b> lasted 20 seconds and <b>${T.c60}</b> reached a minute.
+       Judged on calls that actually held, the true cost is <b>${inr(callSpend/T.c20)}</b> per 20-second call
+       and ${inr(callSpend/T.c60)} per minute-long one. The headline ${inr(callSpend/T.placed)} counts hang-ups too.`});
+  if(best) cards.push({t:`Best on real conversations: ${best.c.short}`,
+    b:`${best.c20} calls of 20s or more from ${inr(best.spend)} — <b>${inr(best.spend/best.c20)}</b> each.
+       On placed calls alone the ranking looks different, which is why duration is worth watching.`});
   if(web && web.spend>0) cards.push({w:1, t:`${web.c.short}: ${inr(web.spend)}, nothing tracked back`,
-    b:`This one sends people to the website rather than the phone, so it books no calls by design. Its own goal — the <span class="mono">HEnquiry</span> website event — is reporting <b>no conversions at all</b>, on ${num(web.clicks)} link clicks. Either the enquiry form isn't firing the event, or the traffic isn't converting. Worth settling before it runs again.`});
-  notes.innerHTML = cards.map(c=>
-    `<div class="note-card${c.w?" warn":""}"><h3>${c.t}</h3><p>${c.b}</p></div>`).join("");
+    b:`This one sends people to the website rather than the phone, so it books no calls by design. Its own goal — the
+       <span class="mono">HEnquiry</span> website event — is reporting <b>no conversions at all</b>, on ${num(web.clk)} link
+       clicks. Either the enquiry form isn't firing the event, or the traffic isn't converting. Worth settling before it runs again.`});
+  notes.innerHTML = cards.map(c=>`<div class="note-card${c.w?" warn":""}"><h3>${c.t}</h3><p>${c.b}</p></div>`).join("");
 }
-
-function gapDays(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
 
 function drawChart(dates, R){
   const W=920,H=360, L=62,Rp=52,Tp=22,B=54;
   const iw=W-L-Rp, ih=H-Tp-B;
-  const maxSpend = Math.max(...dates.map(d=>R.filter(r=>r[1]===d).reduce((a,r)=>a+r[2],0)));
-  const maxCalls = Math.max(...dates.map(d=>R.filter(r=>r[1]===d).reduce((a,r)=>a+r[3],0)));
-  const sTop = Math.ceil(maxSpend/250)*250 || 250;
-  const cTop = Math.max(Math.ceil(maxCalls/5)*5, 5);
-  const step = iw/dates.length, bw = Math.min(34, step*0.56);
+  const daySpend = d => R.filter(r=>r[1]===d).reduce((a,r)=>a+r[SP],0);
+  const dayN = (d,i) => R.filter(r=>r[1]===d).reduce((a,r)=>a+r[i],0);
+  const sTop = Math.ceil(Math.max(...dates.map(daySpend))/250)*250 || 250;
+  const cTop = Math.max(Math.ceil(Math.max(...dates.map(d=>dayN(d,PL)))/5)*5, 5);
+  const step = iw/dates.length, bw = Math.min(40, step*0.56);
   const x = i => L + step*i + step/2;
   const ys = v => Tp + ih - (v/sTop)*ih;
   const yc = v => Tp + ih - (v/cTop)*ih;
   let s = "";
-
   for(let g=0; g<=4; g++){
-    const v = sTop*g/4, y = ys(v);
-    s += `<line class="gridline" x1="${L}" y1="${y.toFixed(1)}" x2="${L+iw}" y2="${y.toFixed(1)}"/>`;
-    s += `<text class="axis" x="${L-9}" y="${(y+3.5).toFixed(1)}" text-anchor="end">${Math.round(v)}</text>`;
-    const cv = cTop*g/4;
-    s += `<text class="axis" x="${L+iw+9}" y="${(y+3.5).toFixed(1)}" text-anchor="start">${Math.round(cv)}</text>`;
+    const y = ys(sTop*g/4);
+    s += `<line class="gridline" x1="${L}" y1="${y.toFixed(1)}" x2="${L+iw}" y2="${y.toFixed(1)}"/>`
+       + `<text class="axis" x="${L-9}" y="${(y+3.5).toFixed(1)}" text-anchor="end">${Math.round(sTop*g/4)}</text>`
+       + `<text class="axis" x="${L+iw+9}" y="${(y+3.5).toFixed(1)}" text-anchor="start">${Math.round(cTop*g/4)}</text>`;
   }
-  s += `<text class="axisL" x="${L-9}" y="${Tp-8}" text-anchor="end">Spend ₹</text>`;
-  s += `<text class="axisL" x="${L+iw+9}" y="${Tp-8}" text-anchor="start">Calls</text>`;
-
+  s += `<text class="axisL" x="${L-9}" y="${Tp-8}" text-anchor="end">Spend ₹</text>`
+     + `<text class="axisL" x="${L+iw+9}" y="${Tp-8}" text-anchor="start">Calls</text>`;
   dates.forEach((d,i)=>{
-    const day = R.filter(r=>r[1]===d);
-    let acc = 0;
-    day.forEach(r=>{
-      if(r[2]<=0) return;
-      const y0 = ys(acc), y1 = ys(acc+r[2]);
-      s += `<rect x="${(x(i)-bw/2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1,y0-y1).toFixed(1)}" fill="${CAMPS[r[0]].c}" rx="2"><title>${dLbl(d)} — ${CAMPS[r[0]].short}: ${inr(r[2])}, ${r[3]} calls</title></rect>`;
-      acc += r[2];
+    let acc=0;
+    R.filter(r=>r[1]===d).forEach(r=>{
+      if(r[SP]<=0) return;
+      const y0=ys(acc), y1=ys(acc+r[SP]);
+      s += `<rect x="${(x(i)-bw/2).toFixed(1)}" y="${y1.toFixed(1)}" width="${bw.toFixed(1)}" height="${Math.max(1,y0-y1).toFixed(1)}" fill="${CAMPS[r[0]].c}" rx="2">`
+         + `<title>${dLbl(d)} — ${CAMPS[r[0]].short}: ${inr(r[SP])}, ${r[PL]} calls (${r[C20]} over 20s)</title></rect>`;
+      acc += r[SP];
     });
-    s += `<text class="axis" x="${x(i).toFixed(1)}" y="${H-B+18}" text-anchor="middle">${dLbl(d).split(" ")[0]}</text>`;
-    s += `<text class="axis" x="${x(i).toFixed(1)}" y="${H-B+31}" text-anchor="middle" opacity=".7">${dLbl(d).split(" ")[1]}</text>`;
+    s += `<text class="axis" x="${x(i).toFixed(1)}" y="${H-B+18}" text-anchor="middle">${dLbl(d).split(" ")[0]}</text>`
+       + `<text class="axis" x="${x(i).toFixed(1)}" y="${H-B+31}" text-anchor="middle" opacity=".7">${dLbl(d).split(" ")[1]}</text>`;
   });
-
-  const pts = dates.map((d,i)=>[x(i), yc(R.filter(r=>r[1]===d).reduce((a,r)=>a+r[3],0))]);
-  s += `<polyline fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
-        points="${pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ")}"/>`;
-  dates.forEach((d,i)=>{
-    const c = R.filter(r=>r[1]===d).reduce((a,r)=>a+r[3],0);
-    s += `<circle class="callDot" cx="${pts[i][0].toFixed(1)}" cy="${pts[i][1].toFixed(1)}" r="4"><title>${dLbl(d)}: ${c} calls</title></circle>`;
-    if(c>0) s += `<text class="callLbl" x="${pts[i][0].toFixed(1)}" y="${(pts[i][1]-10).toFixed(1)}">${c}</text>`;
-  });
+  const line = (idx,dash) => {
+    const pts = dates.map((d,i)=>[x(i), yc(dayN(d,idx))]);
+    let o = `<polyline fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"`
+          + (dash?` stroke-dasharray="5 4" opacity=".62"`:``)
+          + ` points="${pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ")}"/>`;
+    dates.forEach((d,i)=>{
+      const v = dayN(d,idx);
+      o += `<circle class="callDot" cx="${pts[i][0].toFixed(1)}" cy="${pts[i][1].toFixed(1)}" r="${dash?3:4}"${dash?' opacity=".62"':''}>`
+         + `<title>${dLbl(d)}: ${v} ${dash?"calls over 20s":"calls placed"}</title></circle>`;
+      if(v>0 && !dash) o += `<text class="callLbl" x="${pts[i][0].toFixed(1)}" y="${(pts[i][1]-10).toFixed(1)}">${v}</text>`;
+    });
+    return o;
+  };
+  s += line(PL,false) + line(C20,true);
   s += `<line class="gridline" x1="${L}" y1="${Tp+ih}" x2="${L+iw}" y2="${Tp+ih}" stroke="var(--rule)"/>`;
-  /* axis break wherever the account went dark for more than a week */
-  dates.forEach((d,i)=>{
-    if(i===0 || gapDays(dates[i-1],d)<=7) return;
-    const xm = (x(i-1)+x(i))/2;
-    s += `<g><rect x="${(xm-6).toFixed(1)}" y="${Tp-4}" width="12" height="${ih+10}" fill="var(--surface)"/>`
-       + `<line x1="${(xm-7).toFixed(1)}" y1="${Tp+ih+7}" x2="${(xm+1).toFixed(1)}" y2="${Tp+ih-7}" stroke="var(--rule)" stroke-width="1.5"/>`
-       + `<line x1="${(xm-1).toFixed(1)}" y1="${Tp+ih+7}" x2="${(xm+7).toFixed(1)}" y2="${Tp+ih-7}" stroke="var(--rule)" stroke-width="1.5"/>`
-       + `<title>No delivery between ${dLbl(dates[i-1])} and ${dLbl(d)}</title></g>`;
-  });
   chart.innerHTML = s;
 }
-
-document.querySelectorAll(".ranges button").forEach(b=>{
-  b.addEventListener("click",()=>{
-    RANGE = b.dataset.range;
-    document.querySelectorAll(".ranges button").forEach(o=>o.setAttribute("aria-pressed", String(o===b)));
-    render();
-  });
-});
 render();
 </script>
 </body>
