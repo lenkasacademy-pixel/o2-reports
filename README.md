@@ -22,9 +22,9 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **11 Sep 2026**. Ad spend ₹5,039.01 + 18% GST ₹907.02 = **₹5,946.03 billed**.
-48 calls placed · 10 lasted 20s · 7 lasted 60s.
-₹49.11 per call placed, but **₹235.71 per call that actually held 20 seconds**
+Frozen **11 Sep 2026** (refreshed late the same day). Ad spend ₹5,072.76 + 18% GST
+₹913.10 = **₹5,985.86 billed**. 48 calls placed · 10 lasted 20s · 7 lasted 60s.
+₹49.71 per call placed, but **₹238.59 per call that actually held 20 seconds**
 (call campaigns only — NRI Elder Care drives website traffic, not phone calls,
 so it is excluded from every per-call figure).
 
