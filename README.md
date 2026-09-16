@@ -22,14 +22,20 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **15 Sep 2026**. Ad spend ₹8,810.31 + 18% GST ₹1,585.86 = **₹10,396.17 billed**.
-120 calls placed · 27 lasted 20s · 20 lasted 60s. ₹43.02 per call placed, but
-**₹191.18 per call that actually held 20 seconds** — up from ₹176.20, because
-14 Sep bought 18 calls of which only 2 held 20 seconds. Per-call figures cover
+Frozen **16 Sep 2026**. Ad spend ₹9,683.76 + 18% GST ₹1,743.08 = **₹11,426.84 billed**.
+127 calls placed · 30 lasted 20s · 23 lasted 60s. ₹44.11 per call placed, and
+**₹186.75 per call that actually held 20 seconds** — better than yesterday's
+₹191.18, because 15 Sep connected 3 of its 8 calls. Per-call figures cover
 **call campaigns only**: NRI Elder Care drives website traffic and the NRI +
 Bengaluru campaign optimises for WhatsApp conversations, so both are excluded
-from every per-call figure. WhatsApp spend is climbing — ₹448.90 on 14 Sep
-against ₹282.23 on the 13th — on one conversation so far.
+from every per-call figure.
+
+**The WhatsApp campaign now deserves its own decision.** It has taken
+**₹1,394.52** across five days — 14% of all spend on the account, and the
+second largest line — for **4 messaging conversations**, or roughly ₹349 each.
+That is more than four times what a connected phone call costs. It is still
+held out of every per-call figure, correctly, but it is no longer small enough
+to ignore.
 
 ## GST and dates
 
