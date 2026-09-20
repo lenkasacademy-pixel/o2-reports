@@ -22,19 +22,27 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **18 Sep 2026**. Ad spend ₹12,287.01 + 18% GST ₹2,211.66 = **₹14,498.67 billed**.
-152 calls placed · 39 lasted 20s · 27 lasted 60s. ₹46.24 per call placed, and
-**₹180.20 per call that actually held 20 seconds** — the best it has been, because
-17 Sep connected 5 of its 12 calls. Per-call figures cover **call campaigns only**:
-NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimises
-for WhatsApp conversations, so both are excluded from every per-call figure.
+Frozen **20 Sep 2026**, covering 4–19 Sep (the 20th is a part-day and is excluded).
+Ad spend ₹14,681.28 + 18% GST ₹2,642.63 = **₹17,323.91 billed**.
+170 calls placed · 43 lasted 20s · 28 lasted 60s. ₹47.54 per call placed and
+**₹187.94 per call that actually held 20 seconds**. That is up from ₹180.20 on the
+4–17 cut; the 20-second cost has read ₹180 → ₹188 over two days and is not on a
+trend either way yet. Per-call figures cover **call campaigns only**: NRI Elder
+Care drives website traffic and the NRI + Bengaluru campaign optimises for WhatsApp
+conversations, so both are excluded from every per-call figure.
 
-**WhatsApp is now 21% of the account** — ₹2,572.30 for **8 conversations**, about
-₹322 each. On 17 September it took ₹851.31, its biggest day and more than the call
-campaign spent, and returned 4 conversations at ₹212.83 — its best rate so far. So
-the case for it is improving, but it is still roughly 1.2× the cost of a phone call
-that holds 20 seconds, and the shift of budget toward it has not been an explicit
-decision.
+**18 September was a near-total stop.** The whole account spent **₹6.43** that day
+— ₹0.98 on Pain Management and ₹5.45 on WhatsApp, 122 impressions between them —
+with both campaigns still set to ACTIVE at Meta. That is a delivery or billing
+stop, not a decision someone made, and it is the single biggest thing on this
+refresh. Spend resumed normally on the 19th.
+
+**WhatsApp is now 27% of the account** — ₹3,913.14 for **16 conversations**, about
+₹245 each, down from ₹322 on the 4–17 cut. It outspent the call campaign again on
+19 September (₹1,340.84 against ₹1,053.24) and returned 8 conversations at ₹167.61,
+its best day yet. At that day rate it undercuts a 20-second call; across the month
+it still costs about 1.3× one. The shift of budget toward it has never been an
+explicit decision — worth settling.
 
 ## GST and dates
 
@@ -73,3 +81,8 @@ Pull with Meta MCP `ads_get_ad_entities`, `level: "campaign"`, `time_increment: 
 - `CAMPS` order must not be reshuffled; `DAILY[0]` indexes into it.
 - Update the snapshot date in `index.html` (title comment, masthead stamp, footer)
   and here.
+- The `msg` campaign has **no column for messaging conversations** — `DAILY`'s
+  `placed` is phone calls only, and the page renders msg rows as "no calls —
+  WhatsApp". Conversation counts live in this README alone, so re-pull them
+  (`results`, indicator `onsite_conversion.messaging_conversation_started_7d`)
+  whenever you touch the WhatsApp paragraph above.
