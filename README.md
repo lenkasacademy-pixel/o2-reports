@@ -22,27 +22,30 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **20 Sep 2026**, covering 4–19 Sep (the 20th is a part-day and is excluded).
-Ad spend ₹14,681.28 + 18% GST ₹2,642.63 = **₹17,323.91 billed**.
-170 calls placed · 43 lasted 20s · 28 lasted 60s. ₹47.54 per call placed and
-**₹187.94 per call that actually held 20 seconds**. That is up from ₹180.20 on the
-4–17 cut; the 20-second cost has read ₹180 → ₹188 over two days and is not on a
-trend either way yet. Per-call figures cover **call campaigns only**: NRI Elder
-Care drives website traffic and the NRI + Bengaluru campaign optimises for WhatsApp
-conversations, so both are excluded from every per-call figure.
+Frozen **22 Sep 2026**, covering 4–21 Sep (the 22nd is a part-day and is excluded).
+Ad spend ₹17,832.03 + 18% GST ₹3,209.77 = **₹21,041.80 billed**.
+186 calls placed · 49 lasted 20s · 32 lasted 60s. ₹50.88 per call placed and
+**₹193.14 per call that actually held 20 seconds**.
 
-**18 September was a near-total stop.** The whole account spent **₹6.43** that day
-— ₹0.98 on Pain Management and ₹5.45 on WhatsApp, 122 impressions between them —
-with both campaigns still set to ACTIVE at Meta. That is a delivery or billing
-stop, not a decision someone made, and it is the single biggest thing on this
-refresh. Spend resumed normally on the 19th.
+**Calls are getting steadily dearer.** Cost per call placed has read ₹46.24 →
+₹47.54 → ₹50.88 across three cuts, and the 20-second cost ₹180.20 → ₹187.94 →
+₹193.14. Three moves in one direction on both lines. The 4–17 cut called ₹180.20
+"the best it has been"; that was one reading, and it has not been matched since.
+Per-call figures cover **call campaigns only**: NRI Elder Care drives website
+traffic and the NRI + Bengaluru campaign optimises for WhatsApp conversations, so
+both are excluded from every per-call figure.
 
-**WhatsApp is now 27% of the account** — ₹3,913.14 for **16 conversations**, about
-₹245 each, down from ₹322 on the 4–17 cut. It outspent the call campaign again on
-19 September (₹1,340.84 against ₹1,053.24) and returned 8 conversations at ₹167.61,
-its best day yet. At that day rate it undercuts a 20-second call; across the month
-it still costs about 1.3× one. The shift of budget toward it has never been an
-explicit decision — worth settling.
+**WhatsApp is now 32% of the account** and moving the other way — ₹5,681.38 for
+**26 conversations**, **₹218.53** each, improving across the same three cuts
+(₹322 → ₹245 → ₹219). It has outspent the call campaign on every day since the
+19th. A conversation still costs more than a 20-second call, but the gap has
+closed from about 1.3× to 1.13×, and on current direction it crosses. **That
+crossover has never been an explicit decision by anyone** — the budget has drifted
+there. Worth settling deliberately rather than letting Meta settle it.
+
+**18 September was a near-total stop** — the whole account spent ₹6.43 that day,
+122 impressions, both campaigns still ACTIVE. Kept here because nobody has
+explained it yet; delivery has been normal since.
 
 ## GST and dates
 

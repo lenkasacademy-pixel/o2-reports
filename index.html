@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O2 Health Hub · Calls Report</title>
-<!-- Standalone snapshot: Meta Ads figures frozen 20 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
+<!-- Standalone snapshot: Meta Ads figures frozen 22 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -165,7 +165,7 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
       <h1>Calls, and <em>what each one cost</em></h1>
     </div>
     <div class="mast-r">
-      <div class="stamp"><span class="dot"></span><span>Snapshot 20 Sep 2026 · account 924502380456661</span></div>
+      <div class="stamp"><span class="dot"></span><span>Snapshot 22 Sep 2026 · account 924502380456661</span></div>
     </div>
   </div>
 
@@ -226,12 +226,12 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <footer>
     <span>O2 Health Hub · prepared by Lenka's Academy</span>
-    <span class="mono">September 2026 · frozen 20 Sep · source: Meta Ads Manager</span>
+    <span class="mono">September 2026 · frozen 22 Sep · source: Meta Ads Manager</span>
   </footer>
 </div>
 
 <script>
-/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 20 Sep 2026 ----
+/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 22 Sep 2026 ----
    20s/60s counts are derived as spend ÷ cost_per_action_type for
    click_to_call_native_20s_call_connect / _60s_call_connect. Every division lands
    on a whole number and the per-campaign sums equal Meta's own period totals. */
@@ -244,8 +244,8 @@ const CAMPS = [
   {n:"O2 Guardian · NRI + Bengaluru WhatsApp", short:"WhatsApp", type:"msg", c:"#3a7d44"}
 ];
 const LIVE = 4;
-const SNAP_DAY = "2026-09-20";        /* last day in the data (part-day) */
-const YDAY     = "2026-09-19";        /* the last complete day */
+const SNAP_DAY = "2026-09-22";        /* last day in the data (part-day) */
+const YDAY     = "2026-09-21";        /* the last complete day */
 const GST      = 0.18;                /* Meta bills 18% GST on ad spend in India */
 /* [campIdx, date, spend, placed, calls20s, calls60s, tapped, impressions, reach, linkClicks] */
 const DAILY = [
@@ -275,10 +275,14 @@ const DAILY = [
   [5,"2026-09-17",  851.31, 0, 0, 0,  0,  7668,  6325,  40],
   [4,"2026-09-18",    0.98, 0, 0, 0,  0,    41,    40,   1],
   [5,"2026-09-18",    5.45, 0, 0, 0,  0,    81,    78,   0],
-  [4,"2026-09-19", 1053.24,18, 4, 1, 18, 12174,  9182,  34],
-  [5,"2026-09-19", 1340.84, 0, 0, 0,  0,  8249,  7002,  48],
-  [4,"2026-09-20",  184.19, 7, 1, 0,  6,  2285,  1855,  17],
-  [5,"2026-09-20",  298.15, 0, 0, 0,  0,  1224,  1006,  10]
+  [4,"2026-09-19", 1056.12,18, 4, 1, 18, 12218,  9200,  34],
+  [5,"2026-09-19", 1343.51, 0, 0, 0,  0,  8269,  7019,  48],
+  [4,"2026-09-20",  716.88, 9, 2, 1,  9,  8211,  6326,  27],
+  [5,"2026-09-20",  918.73, 0, 0, 0,  0,  5786,  4631,  39],
+  [4,"2026-09-21",  662.75, 7, 4, 3,  8,  7056,  5513,  19],
+  [5,"2026-09-21",  846.84, 0, 0, 0,  0,  6673,  5389,  24],
+  [4,"2026-09-22",    2.64, 0, 0, 0,  0,    37,    34,   0],
+  [5,"2026-09-22",  150.59, 0, 0, 0,  0,  1296,  1214,   8]
 ];
 const SP=2, PL=3, C20=4, C60=5, TAP=6, IMP=7, RCH=8, CLK=9;
 
