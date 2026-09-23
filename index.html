@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O2 Health Hub · Calls Report</title>
-<!-- Standalone snapshot: Meta Ads figures frozen 22 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
+<!-- Standalone snapshot: Meta Ads figures frozen 23 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -165,7 +165,7 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
       <h1>Calls, and <em>what each one cost</em></h1>
     </div>
     <div class="mast-r">
-      <div class="stamp"><span class="dot"></span><span>Snapshot 22 Sep 2026 · account 924502380456661</span></div>
+      <div class="stamp"><span class="dot"></span><span>Snapshot 23 Sep 2026 · account 924502380456661</span></div>
     </div>
   </div>
 
@@ -226,12 +226,12 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <footer>
     <span>O2 Health Hub · prepared by Lenka's Academy</span>
-    <span class="mono">September 2026 · frozen 22 Sep · source: Meta Ads Manager</span>
+    <span class="mono">September 2026 · frozen 23 Sep · source: Meta Ads Manager</span>
   </footer>
 </div>
 
 <script>
-/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 22 Sep 2026 ----
+/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 23 Sep 2026 ----
    20s/60s counts are derived as spend ÷ cost_per_action_type for
    click_to_call_native_20s_call_connect / _60s_call_connect. Every division lands
    on a whole number and the per-campaign sums equal Meta's own period totals. */
@@ -241,11 +241,12 @@ const CAMPS = [
   {n:"Kukatpally Calls · Clean v2",  short:"Kukatpally",type:"calls", c:"#7a5cc4"},
   {n:"Endoscopy · 6 km radius",      short:"Endoscopy", type:"calls", c:"#0d7a63"},
   {n:"Pain Management · Sep 2026",   short:"Pain Mgmt", type:"calls", c:"#c2544a"},
-  {n:"O2 Guardian · NRI + Bengaluru WhatsApp", short:"WhatsApp", type:"msg", c:"#3a7d44"}
+  {n:"O2 Guardian · NRI + Bengaluru WhatsApp", short:"WhatsApp", type:"msg", c:"#3a7d44"},
+  {n:"Lipoma Removal · Calls",       short:"Lipoma",     type:"calls", c:"#5a6e8c"}
 ];
-const LIVE = 4;
-const SNAP_DAY = "2026-09-22";        /* last day in the data (part-day) */
-const YDAY     = "2026-09-21";        /* the last complete day */
+const LIVE = new Set([4, 6]);   /* campaign indexes still ACTIVE at Meta */
+const SNAP_DAY = "2026-09-23";        /* last day in the data (part-day) */
+const YDAY     = "2026-09-22";        /* the last complete day */
 const GST      = 0.18;                /* Meta bills 18% GST on ad spend in India */
 /* [campIdx, date, spend, placed, calls20s, calls60s, tapped, impressions, reach, linkClicks] */
 const DAILY = [
@@ -279,10 +280,13 @@ const DAILY = [
   [5,"2026-09-19", 1343.51, 0, 0, 0,  0,  8269,  7019,  48],
   [4,"2026-09-20",  716.88, 9, 2, 1,  9,  8211,  6326,  27],
   [5,"2026-09-20",  918.73, 0, 0, 0,  0,  5786,  4631,  39],
-  [4,"2026-09-21",  662.75, 7, 4, 3,  8,  7056,  5513,  19],
-  [5,"2026-09-21",  846.84, 0, 0, 0,  0,  6673,  5389,  24],
-  [4,"2026-09-22",    2.64, 0, 0, 0,  0,    37,    34,   0],
-  [5,"2026-09-22",  150.59, 0, 0, 0,  0,  1296,  1214,   8]
+  [4,"2026-09-21",  666.92, 7, 4, 3,  8,  7093,  5540,  19],
+  [5,"2026-09-21",  854.77, 0, 0, 0,  0,  6721,  5434,  26],
+  [4,"2026-09-22",  481.19, 7, 4, 2,  7,  4976,  4077,  19],
+  [5,"2026-09-22",  234.87, 0, 0, 0,  0,  2290,  2171,  18],
+  [6,"2026-09-22",  124.53, 7, 1, 0,  7,  2734,  2325,  12],
+  [4,"2026-09-23",    7.84, 0, 0, 0,  0,    63,    56,   0],
+  [6,"2026-09-23",   14.57, 0, 0, 0,  1,   335,   263,   2]
 ];
 const SP=2, PL=3, C20=4, C60=5, TAP=6, IMP=7, RCH=8, CLK=9;
 
@@ -399,7 +403,7 @@ function render(){
   let cb = per.slice().sort((a,b)=>b.spend-a.spend).map(o=>{
     const isCall = o.c.type==="calls";
     const tag = isCall ? "" : `<span class="tag web">website</span>`;
-    const live = o.i===LIVE ? `<span class="tag live">live</span>` : "";
+    const live = LIVE.has(o.i) ? `<span class="tag live">live</span>` : "";
     return `<tr><td><span class="swatch" style="background:${o.c.c}"></span>${o.c.n}${tag}${live}</td>
       <td class="mono">${o.days} ${o.days===1?"day":"days"}</td>
       <td class="mono">${inr(o.spend)}</td>

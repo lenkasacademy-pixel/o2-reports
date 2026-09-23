@@ -22,26 +22,37 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **22 Sep 2026**, covering 4–21 Sep (the 22nd is a part-day and is excluded).
-Ad spend ₹17,832.03 + 18% GST ₹3,209.77 = **₹21,041.80 billed**.
-186 calls placed · 49 lasted 20s · 32 lasted 60s. ₹50.88 per call placed and
-**₹193.14 per call that actually held 20 seconds**.
+Frozen **23 Sep 2026**, covering 4–22 Sep (the 23rd is a part-day and is excluded).
+Ad spend ₹18,684.72 + 18% GST ₹3,363.25 = **₹22,047.97 billed**.
+200 calls placed · 54 lasted 20s · 34 lasted 60s. ₹50.37 per call placed and
+**₹186.55 per call that actually held 20 seconds**.
 
-**Calls are getting steadily dearer.** Cost per call placed has read ₹46.24 →
-₹47.54 → ₹50.88 across three cuts, and the 20-second cost ₹180.20 → ₹187.94 →
-₹193.14. Three moves in one direction on both lines. The 4–17 cut called ₹180.20
-"the best it has been"; that was one reading, and it has not been matched since.
+**A new call campaign appeared on 22 September and is the cheapest thing this
+account has ever run.** `O2 Health Hub | Lipoma Removal | Calls` — ₹124.53 for
+**7 calls at ₹17.79**, against Autism's ₹33.96 and Pain Management's ₹52.49.
+It is `CAMPS[6]`, appended not inserted. **One day and seven calls is not a
+result**; it is a reason to keep the budget on it and look again in a week.
+
+**WhatsApp has been paused.** It ended at ₹5,924.18 for 26 conversations,
+**₹227.85** each, and its final ₹234.87 on 22 September returned none at all.
+The last three cuts read ₹322 → ₹245 → ₹228 a conversation, so it was still
+improving when it stopped — whoever paused it should know that.
+
+**The per-call lines fell for the first time in four cuts**, but read them
+carefully:
+
+| | 4–17 | 4–19 | 4–21 | 4–22 |
+|---|---|---|---|---|
+| Cost per call placed | ₹46.24 | ₹47.54 | ₹50.88 | **₹50.37** |
+| …excluding the new Lipoma campaign | — | — | ₹50.88 | ₹51.55 |
+| Cost per 20-second call | ₹180.20 | ₹187.94 | ₹193.14 | **₹186.55** |
+| …excluding Lipoma | — | — | ₹193.14 | ₹187.72 |
+
+The headline fall in cost per call is **entirely** the new campaign; the older
+campaigns kept getting dearer. The 20-second improvement is real on its own.
 Per-call figures cover **call campaigns only**: NRI Elder Care drives website
-traffic and the NRI + Bengaluru campaign optimises for WhatsApp conversations, so
+traffic and the NRI + Bengaluru campaign optimised for WhatsApp conversations, so
 both are excluded from every per-call figure.
-
-**WhatsApp is now 32% of the account** and moving the other way — ₹5,681.38 for
-**26 conversations**, **₹218.53** each, improving across the same three cuts
-(₹322 → ₹245 → ₹219). It has outspent the call campaign on every day since the
-19th. A conversation still costs more than a 20-second call, but the gap has
-closed from about 1.3× to 1.13×, and on current direction it crosses. **That
-crossover has never been an explicit decision by anyone** — the budget has drifted
-there. Worth settling deliberately rather than letting Meta settle it.
 
 **18 September was a near-total stop** — the whole account spent ₹6.43 that day,
 122 impressions, both campaigns still ACTIVE. Kept here because nobody has
@@ -81,7 +92,12 @@ Pull with Meta MCP `ads_get_ad_entities`, `level: "campaign"`, `time_increment: 
   only rows with spend, calls or impressions. `filtering` on `amount_spent > 0` is
   silently ignored alongside `time_increment` — filter locally.
 - Recent days keep settling for ~48h; re-pull the whole month rather than appending.
-- `CAMPS` order must not be reshuffled; `DAILY[0]` indexes into it.
+- `CAMPS` order must not be reshuffled; `DAILY[0]` indexes into it. **Append new
+  campaigns to the end** — Lipoma Removal was added as index 6 on 23 Sep for
+  exactly this reason.
+- `LIVE` is a `Set` of campaign indexes still ACTIVE at Meta, not a single index.
+  It became a set on 23 Sep when Lipoma started and WhatsApp was paused. Keep it
+  in step with the statuses or the "live" tag lies.
 - Update the snapshot date in `index.html` (title comment, masthead stamp, footer)
   and here.
 - The `msg` campaign has **no column for messaging conversations** — `DAILY`'s
