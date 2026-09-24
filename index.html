@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O2 Health Hub · Calls Report</title>
-<!-- Standalone snapshot: Meta Ads figures frozen 23 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
+<!-- Standalone snapshot: Meta Ads figures frozen 24 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -165,7 +165,7 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
       <h1>Calls, and <em>what each one cost</em></h1>
     </div>
     <div class="mast-r">
-      <div class="stamp"><span class="dot"></span><span>Snapshot 23 Sep 2026 · account 924502380456661</span></div>
+      <div class="stamp"><span class="dot"></span><span>Snapshot 24 Sep 2026 · account 924502380456661</span></div>
     </div>
   </div>
 
@@ -226,12 +226,12 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <footer>
     <span>O2 Health Hub · prepared by Lenka's Academy</span>
-    <span class="mono">September 2026 · frozen 23 Sep · source: Meta Ads Manager</span>
+    <span class="mono">September 2026 · frozen 24 Sep · source: Meta Ads Manager</span>
   </footer>
 </div>
 
 <script>
-/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 23 Sep 2026 ----
+/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 24 Sep 2026 ----
    20s/60s counts are derived as spend ÷ cost_per_action_type for
    click_to_call_native_20s_call_connect / _60s_call_connect. Every division lands
    on a whole number and the per-campaign sums equal Meta's own period totals. */
@@ -245,8 +245,8 @@ const CAMPS = [
   {n:"Lipoma Removal · Calls",       short:"Lipoma",     type:"calls", c:"#5a6e8c"}
 ];
 const LIVE = new Set([4, 6]);   /* campaign indexes still ACTIVE at Meta */
-const SNAP_DAY = "2026-09-23";        /* last day in the data (part-day) */
-const YDAY     = "2026-09-22";        /* the last complete day */
+const SNAP_DAY = "2026-09-24";        /* last day in the data (part-day) */
+const YDAY     = "2026-09-23";        /* the last complete day */
 const GST      = 0.18;                /* Meta bills 18% GST on ad spend in India */
 /* [campIdx, date, spend, placed, calls20s, calls60s, tapped, impressions, reach, linkClicks] */
 const DAILY = [
@@ -285,8 +285,10 @@ const DAILY = [
   [4,"2026-09-22",  481.19, 7, 4, 2,  7,  4976,  4077,  19],
   [5,"2026-09-22",  234.87, 0, 0, 0,  0,  2290,  2171,  18],
   [6,"2026-09-22",  124.53, 7, 1, 0,  7,  2734,  2325,  12],
-  [4,"2026-09-23",    7.84, 0, 0, 0,  0,    63,    56,   0],
-  [6,"2026-09-23",   14.57, 0, 0, 0,  1,   335,   263,   2]
+  [4,"2026-09-23",  751.55, 8, 3, 0,  8,  9011,  7014,  26],
+  [6,"2026-09-23",  605.26,16, 5, 2, 21, 14432, 10840,  69],
+  [4,"2026-09-24",  264.77, 8, 1, 0,  8,  2225,  1872,  14],
+  [6,"2026-09-24",  238.54, 9, 3, 2, 10,  6371,  5416,  26]
 ];
 const SP=2, PL=3, C20=4, C60=5, TAP=6, IMP=7, RCH=8, CLK=9;
 
