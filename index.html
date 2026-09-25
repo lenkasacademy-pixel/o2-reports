@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O2 Health Hub · Calls Report</title>
-<!-- Standalone snapshot: Meta Ads figures frozen 25 Sep 2026. Account 924502380456661. September 2026 only. No live connection. -->
+<!-- Standalone snapshot: Meta Ads figures frozen 25 Sep 2026, 10:25 pm IST. Account 924502380456661. September 2026 only. No live connection. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -165,7 +165,7 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
       <h1>Calls, and <em>what each one cost</em></h1>
     </div>
     <div class="mast-r">
-      <div class="stamp"><span class="dot"></span><span>Snapshot 25 Sep 2026 · account 924502380456661</span></div>
+      <div class="stamp"><span class="dot"></span><span>Snapshot 25 Sep 2026, 10:25 pm · account 924502380456661</span></div>
     </div>
   </div>
 
@@ -226,12 +226,12 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <footer>
     <span>O2 Health Hub · prepared by Lenka's Academy</span>
-    <span class="mono">September 2026 · frozen 25 Sep · source: Meta Ads Manager</span>
+    <span class="mono">September 2026 · frozen 25 Sep, 10:25 pm · source: Meta Ads Manager</span>
   </footer>
 </div>
 
 <script>
-/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 25 Sep 2026 ----
+/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 25 Sep 2026, 10:25 pm IST ----
    20s/60s counts are derived as spend ÷ cost_per_action_type for
    click_to_call_native_20s_call_connect / _60s_call_connect. Every division lands
    on a whole number and the per-campaign sums equal Meta's own period totals. */
@@ -244,7 +244,7 @@ const CAMPS = [
   {n:"O2 Guardian · NRI + Bengaluru WhatsApp", short:"WhatsApp", type:"msg", c:"#3a7d44"},
   {n:"Lipoma Removal · Calls",       short:"Lipoma",     type:"calls", c:"#5a6e8c"}
 ];
-const LIVE = new Set([4, 6]);   /* campaign indexes still ACTIVE at Meta */
+const LIVE = new Set([0, 3, 4, 6]);   /* campaign indexes still ACTIVE at Meta */
 const SNAP_DAY = "2026-09-25";        /* last day in the data (part-day) */
 const YDAY     = "2026-09-24";        /* the last complete day */
 const GST      = 0.18;                /* Meta bills 18% GST on ad spend in India */
@@ -264,32 +264,35 @@ const DAILY = [
   [4,"2026-09-11",  818.87,20, 7, 6, 19,  7644,  5976,  34],
   [4,"2026-09-12",  521.01,16, 4, 2, 16,  4626,  3465,  25],
   [5,"2026-09-12",  121.59, 0, 0, 0,  0,   767,   615,   6],
-  [4,"2026-09-13",  688.10,17, 4, 3, 16,  6900,  5140,  29],
+  [4,"2026-09-13",  688.30,17, 4, 3, 16,  6901,  5140,  29],
   [5,"2026-09-13",  282.23, 0, 0, 0,  0,  2173,  1556,  13],
-  [4,"2026-09-14",  769.67,18, 2, 2, 18,  7401,  5604,  35],
-  [5,"2026-09-14",  451.15, 0, 0, 0,  0,  2768,  1924,  13],
+  [4,"2026-09-14",  770.10,18, 2, 2, 18,  7402,  5604,  35],
+  [5,"2026-09-14",  451.45, 0, 0, 0,  0,  2770,  1926,  13],
   [4,"2026-09-15",  437.13, 8, 3, 3,  9,  5053,  3979,  23],
   [5,"2026-09-15",  406.93, 0, 0, 0,  0,  3095,  2083,  16],
-  [4,"2026-09-16",  790.69,13, 4, 1, 14,  8638,  6653,  35],
+  [4,"2026-09-16",  790.69,13, 4, 1, 14,  8639,  6653,  35],
   [5,"2026-09-16",  453.64, 0, 0, 0,  0,  3266,  2337,  14],
-  [4,"2026-09-17",  649.52,12, 5, 3, 13,  8861,  6950,  23],
-  [5,"2026-09-17",  851.31, 0, 0, 0,  0,  7668,  6325,  40],
+  [4,"2026-09-17",  649.52,12, 5, 3, 13,  8905,  6974,  24],
+  [5,"2026-09-17",  851.31, 0, 0, 0,  0,  7683,  6335,  40],
   [4,"2026-09-18",    0.98, 0, 0, 0,  0,    41,    40,   1],
   [5,"2026-09-18",    5.45, 0, 0, 0,  0,    81,    78,   0],
   [4,"2026-09-19", 1056.12,18, 4, 1, 18, 12218,  9200,  34],
   [5,"2026-09-19", 1343.51, 0, 0, 0,  0,  8269,  7019,  48],
   [4,"2026-09-20",  716.88, 9, 2, 1,  9,  8211,  6326,  27],
-  [5,"2026-09-20",  918.73, 0, 0, 0,  0,  5786,  4631,  39],
+  [5,"2026-09-20",  919.04, 0, 0, 0,  0,  5788,  4631,  39],
   [4,"2026-09-21",  666.92, 7, 4, 3,  8,  7093,  5540,  19],
   [5,"2026-09-21",  854.77, 0, 0, 0,  0,  6721,  5434,  26],
-  [4,"2026-09-22",  481.19, 7, 4, 2,  7,  4976,  4077,  19],
-  [5,"2026-09-22",  234.87, 0, 0, 0,  0,  2290,  2171,  18],
-  [6,"2026-09-22",  124.53, 7, 1, 0,  7,  2734,  2325,  12],
-  [4,"2026-09-23",  751.55, 8, 3, 0,  8,  9011,  7014,  26],
-  [6,"2026-09-23",  605.26,16, 5, 2, 21, 14432, 10840,  69],
-  [4,"2026-09-24",  403.32,10, 1, 0, 10,  3683,  3037,  20],
-  [6,"2026-09-24",  310.50,12, 4, 2, 13,  8579,  7350,  35],
-  [4,"2026-09-25",    0.01, 0, 0, 0,  0,     1,     0,   0]
+  [4,"2026-09-22",  484.03, 7, 4, 2,  7,  5005,  4094,  19],
+  [5,"2026-09-22",  234.87, 0, 0, 0,  0,  2291,  2171,  18],
+  [6,"2026-09-22",  125.63, 7, 1, 0,  7,  2754,  2345,  12],
+  [4,"2026-09-23",  751.73, 8, 3, 0,  8,  9022,  7015,  26],
+  [6,"2026-09-23",  605.66,16, 5, 2, 21, 14452, 10841,  69],
+  [4,"2026-09-24",  403.32,10, 1, 0, 10,  3694,  3043,  20],
+  [6,"2026-09-24",  310.51,12, 4, 2, 13,  8598,  7350,  35],
+  [0,"2026-09-25",   79.09, 0, 0, 0,  0,  1033,   937,  10],
+  [3,"2026-09-25",  313.23, 7, 0, 0,  9,  7283,  6058,  45],
+  [4,"2026-09-25",  230.03, 7, 3, 0,  8,  2669,  2383,  12],
+  [6,"2026-09-25",  210.78, 6, 1, 0,  7,  6830,  6134,  19]
 ];
 const SP=2, PL=3, C20=4, C60=5, TAP=6, IMP=7, RCH=8, CLK=9;
 

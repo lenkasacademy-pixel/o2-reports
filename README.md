@@ -22,36 +22,45 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **25 Sep 2026**, covering 4–24 Sep (the 25th is a part-day and is excluded).
-Ad spend ₹20,755.35 + 18% GST ₹3,735.96 = **₹24,491.31 billed**.
-246 calls placed · 67 lasted 20s · 38 lasted 60s. ₹49.37 per call placed and
-**₹181.26 per call that actually held 20 seconds**.
+Frozen **25 Sep 2026, 10:25 pm IST**, covering 4–24 Sep (the 25th is a part-day
+and is excluded from every headline).
+Ad spend ₹20,761.12 + 18% GST ₹3,737.00 = **₹24,498.12 billed**.
+246 calls placed · 67 lasted 20s · 38 lasted 60s. ₹49.39 per call placed and
+**₹181.34 per call that actually held 20 seconds**.
 
-**Lipoma Removal is now the best line on the account, three days running.**
-₹1,040.29 for **35 calls at ₹29.72**, against Pain Management's ₹52.63 and
-Autism's ₹33.96, the best this account had managed before it. Its daily rate has
-read ₹17.79 → ₹37.83 → ₹25.88 and it is the only campaign here whose cost per
-call is going the right way. It is `CAMPS[6]`, appended not inserted.
+**Two campaigns came back on today.** Endoscopy and Autism had both been dark
+since early September; on 25 Sep Endoscopy spent ₹313.23 for **7 calls at ₹44.75**
+and Autism ₹79.09 for none. `LIVE` is now `{0, 3, 4, 6}` — four campaigns
+ACTIVE at Meta, up from two.
 
-**WhatsApp stays paused** at ₹5,924.18 for **27 conversations**, ₹219.41 each —
+**Lipoma Removal is still the best line on the account, four days running.**
+Over the settled days 22–24 Sep it is ₹1,041.80 for **35 calls at ₹29.77**,
+against everything else on the account at ₹52.64. Counting today's part-day too
+it reaches ₹1,252.58 and 41 calls, ₹30.55 each. Its daily rate reads
+₹17.95 → ₹37.85 → ₹25.88 → ₹35.13 — the fourth day is dearer, but still well
+under every other campaign here. It is `CAMPS[6]`, appended not inserted.
+
+**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each —
 it picked up one more on 24 September with no spend behind it, a late-attributed
 conversation from a click before the pause. It was still improving when it
-stopped (₹322 → ₹245 → ₹228 → ₹219 across four cuts).
+stopped (₹322 → ₹245 → ₹228 → ₹219 across four cuts). The `DAILY` row format has
+no field for WhatsApp conversations, so that 27th one is recorded here and not on
+the page; a zero-spend, zero-impression row would only add a blank line.
 
 **Read the headline carefully — the whole improvement is the new campaign:**
 
 | | 4–19 | 4–21 | 4–22 | 4–23 | 4–24 |
 |---|---|---|---|---|---|
-| Cost per call placed | ₹47.54 | ₹50.88 | ₹50.37 | ₹51.03 | **₹49.37** |
-| …excluding Lipoma | — | ₹50.88 | ₹51.55 | ₹53.24 | **₹52.63** |
-| Cost per 20-second call | ₹187.94 | ₹193.14 | ₹186.55 | ₹184.36 | **₹181.26** |
-| …excluding Lipoma | — | ₹193.14 | ₹187.72 | ₹191.08 | **₹194.81** |
+| Cost per call placed | ₹47.54 | ₹50.88 | ₹50.37 | ₹51.03 | **₹49.39** |
+| …excluding Lipoma | — | ₹50.88 | ₹51.55 | ₹53.24 | **₹52.64** |
+| Cost per 20-second call | ₹187.94 | ₹193.14 | ₹186.55 | ₹184.36 | **₹181.34** |
+| …excluding Lipoma | — | ₹193.14 | ₹187.72 | ₹191.08 | **₹194.87** |
 
-The blended cost per call has fallen below ₹50 for the first time since the 4–17
-cut. **All of that is Lipoma.** Excluding it, cost per call is ₹52.63 and the
-20-second cost ₹194.81 — the dearest 20-second call this account has recorded.
-One small campaign is carrying the average while the older ones drift the other
-way. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
+The blended cost per call is below ₹50 for the second refresh running.
+**All of that is Lipoma.** Excluding it, cost per call is ₹52.64 and the
+20-second cost ₹194.87 — still the dearest 20-second call this account has
+recorded. One small campaign is carrying the average while the older ones drift
+the other way. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
 NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimised
 for WhatsApp conversations, so both sit outside every per-call figure.
 
