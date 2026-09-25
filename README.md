@@ -22,34 +22,36 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **24 Sep 2026**, covering 4–23 Sep (the 24th is a part-day and is excluded).
-Ad spend ₹20,041.53 + 18% GST ₹3,607.48 = **₹23,649.01 billed**.
-224 calls placed · 62 lasted 20s · 36 lasted 60s. ₹51.03 per call placed and
-**₹184.36 per call that actually held 20 seconds**.
+Frozen **25 Sep 2026**, covering 4–24 Sep (the 25th is a part-day and is excluded).
+Ad spend ₹20,755.35 + 18% GST ₹3,735.96 = **₹24,491.31 billed**.
+246 calls placed · 67 lasted 20s · 38 lasted 60s. ₹49.37 per call placed and
+**₹181.26 per call that actually held 20 seconds**.
 
-**Lipoma Removal is holding up.** Two days in: `O2 Health Hub | Lipoma Removal |
-Calls` has taken ₹729.79 for **23 calls at ₹31.73** — against Pain Management's
-₹54.62 on the same account, and cheaper than Autism's ₹33.96, the best this
-account had managed before. Day two alone was 16 calls at ₹37.83. It is
-`CAMPS[6]`, appended not inserted. Two days is still two days, but it has now
-survived one.
+**Lipoma Removal is now the best line on the account, three days running.**
+₹1,040.29 for **35 calls at ₹29.72**, against Pain Management's ₹52.63 and
+Autism's ₹33.96, the best this account had managed before it. Its daily rate has
+read ₹17.79 → ₹37.83 → ₹25.88 and it is the only campaign here whose cost per
+call is going the right way. It is `CAMPS[6]`, appended not inserted.
 
-**WhatsApp stays paused** at ₹5,924.18 for 26 conversations, ₹227.85 each. It was
-still improving when it stopped (₹322 → ₹245 → ₹228 across three cuts).
+**WhatsApp stays paused** at ₹5,924.18 for **27 conversations**, ₹219.41 each —
+it picked up one more on 24 September with no spend behind it, a late-attributed
+conversation from a click before the pause. It was still improving when it
+stopped (₹322 → ₹245 → ₹228 → ₹219 across four cuts).
 
 **Read the headline carefully — the whole improvement is the new campaign:**
 
-| | 4–17 | 4–19 | 4–21 | 4–22 | 4–23 |
+| | 4–19 | 4–21 | 4–22 | 4–23 | 4–24 |
 |---|---|---|---|---|---|
-| Cost per call placed | ₹46.24 | ₹47.54 | ₹50.88 | ₹50.37 | **₹51.03** |
-| …excluding Lipoma | — | — | ₹50.88 | ₹51.55 | **₹53.24** |
-| Cost per 20-second call | ₹180.20 | ₹187.94 | ₹193.14 | ₹186.55 | **₹184.36** |
-| …excluding Lipoma | — | — | ₹193.14 | ₹187.72 | **₹191.08** |
+| Cost per call placed | ₹47.54 | ₹50.88 | ₹50.37 | ₹51.03 | **₹49.37** |
+| …excluding Lipoma | — | ₹50.88 | ₹51.55 | ₹53.24 | **₹52.63** |
+| Cost per 20-second call | ₹187.94 | ₹193.14 | ₹186.55 | ₹184.36 | **₹181.26** |
+| …excluding Lipoma | — | ₹193.14 | ₹187.72 | ₹191.08 | **₹194.81** |
 
-Both blended lines look flat or better. Both lines **excluding Lipoma keep
-getting dearer** — ₹50.88 → ₹51.55 → ₹53.24 a call, ₹193.14 → ₹187.72 → ₹191.08
-a 20-second call. The older campaigns have not turned around; one small new
-campaign is carrying the average. Per-call figures cover **call campaigns only**:
+The blended cost per call has fallen below ₹50 for the first time since the 4–17
+cut. **All of that is Lipoma.** Excluding it, cost per call is ₹52.63 and the
+20-second cost ₹194.81 — the dearest 20-second call this account has recorded.
+One small campaign is carrying the average while the older ones drift the other
+way. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
 NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimised
 for WhatsApp conversations, so both sit outside every per-call figure.
 
