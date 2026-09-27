@@ -22,45 +22,56 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **25 Sep 2026, 10:25 pm IST**, covering 4–24 Sep (the 25th is a part-day
+Frozen **27 Sep 2026, 8:25 am IST**, covering 4–26 Sep (the 27th is a part-day
 and is excluded from every headline).
-Ad spend ₹20,761.12 + 18% GST ₹3,737.00 = **₹24,498.12 billed**.
-246 calls placed · 67 lasted 20s · 38 lasted 60s. ₹49.39 per call placed and
-**₹181.34 per call that actually held 20 seconds**.
+Ad spend ₹25,604.11 + 18% GST ₹4,608.74 = **₹30,212.85 billed**.
+326 calls placed · 81 lasted 20s · 42 lasted 60s. ₹52.12 per call placed and
+**₹209.78 per call that actually held 20 seconds**.
 
-**Two campaigns came back on today.** Endoscopy and Autism had both been dark
-since early September; on 25 Sep Endoscopy spent ₹313.23 for **7 calls at ₹44.75**
-and Autism ₹79.09 for none. `LIVE` is now `{0, 3, 4, 6}` — four campaigns
-ACTIVE at Meta, up from two.
+**All four call campaigns are live again**, and 26 September was the account's
+busiest day of the month — ₹3,826.35 for 58 calls. It was also an expensive one:
+**₹65.97 a call against the ₹52.12 month average**, and only 9 of those 58 calls
+held 20 seconds. Both headline rates moved the wrong way this refresh — cost per
+call ₹49.39 → ₹52.12, and the 20-second call ₹181.34 → ₹209.78.
 
-**Lipoma Removal is still the best line on the account, four days running.**
-Over the settled days 22–24 Sep it is ₹1,041.80 for **35 calls at ₹29.77**,
-against everything else on the account at ₹52.64. Counting today's part-day too
-it reaches ₹1,252.58 and 41 calls, ₹30.55 each. Its daily rate reads
-₹17.95 → ₹37.85 → ₹25.88 → ₹35.13 — the fourth day is dearer, but still well
-under every other campaign here. It is `CAMPS[6]`, appended not inserted.
+| 26 Sep | spend | calls | each | 20s |
+|---|---|---|---|---|
+| Endoscopy | ₹1,324.01 | 22 | ₹60.18 | 5 |
+| Pain Management | ₹1,079.30 | 13 | ₹83.02 | 1 |
+| Autism | ₹875.00 | 10 | ₹87.50 | 1 |
+| Lipoma | ₹548.04 | 13 | ₹42.16 | 2 |
 
-**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each —
-it picked up one more on 24 September with no spend behind it, a late-attributed
-conversation from a click before the pause. It was still improving when it
-stopped (₹322 → ₹245 → ₹228 → ₹219 across four cuts). The `DAILY` row format has
-no field for WhatsApp conversations, so that 27th one is recorded here and not on
-the page; a zero-spend, zero-impression row would only add a blank line.
+**Endoscopy is the one to watch.** It restarted on the 25th and has taken
+₹1,856.15 over three days for 32 calls. Its daily rate reads ₹45.41 → ₹55.51 →
+₹57.29 → ₹60.18 → ₹36.91 across every day it has ever run: it gets dearer the
+longer it stays on, then resets cheap after a break.
+
+**Lipoma is still the best line, five days running**, but it is drifting:
+₹17.95 → ₹37.85 → ₹25.88 → ₹32.15 → ₹42.16. Over the settled days it is
+₹1,814.86 for **55 calls at ₹33.00**, against ₹56.01 for everything else. The
+gap is still large, but it was ₹29.77 vs ₹52.64 two days ago.
+
+**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each.
+Meta also reports how far each went: 27 first replies, 13 conversations past one
+message, 5 past three, 3 past five — and every one of the deep ones is the Gulf
+ad set. Bengaluru buys a conversation for ₹160.80 against Gulf's ₹273.88. None of
+that is on the page yet; the `DAILY` row format has no field for messaging depth.
 
 **Read the headline carefully — the whole improvement is the new campaign:**
 
-| | 4–19 | 4–21 | 4–22 | 4–23 | 4–24 |
+| | 4–21 | 4–22 | 4–23 | 4–24 | 4–26 |
 |---|---|---|---|---|---|
-| Cost per call placed | ₹47.54 | ₹50.88 | ₹50.37 | ₹51.03 | **₹49.39** |
-| …excluding Lipoma | — | ₹50.88 | ₹51.55 | ₹53.24 | **₹52.64** |
-| Cost per 20-second call | ₹187.94 | ₹193.14 | ₹186.55 | ₹184.36 | **₹181.34** |
-| …excluding Lipoma | — | ₹193.14 | ₹187.72 | ₹191.08 | **₹194.87** |
+| Cost per call placed | ₹50.88 | ₹50.37 | ₹51.03 | ₹49.39 | **₹52.12** |
+| …excluding Lipoma | ₹50.88 | ₹51.55 | ₹53.24 | ₹52.64 | **₹56.01** |
+| Cost per 20-second call | ₹193.14 | ₹186.55 | ₹184.36 | ₹181.34 | **₹209.78** |
+| …excluding Lipoma | ₹193.14 | ₹187.72 | ₹191.08 | ₹194.87 | **₹226.53** |
 
-The blended cost per call is below ₹50 for the second refresh running.
-**All of that is Lipoma.** Excluding it, cost per call is ₹52.64 and the
-20-second cost ₹194.87 — still the dearest 20-second call this account has
-recorded. One small campaign is carrying the average while the older ones drift
-the other way. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
+The blended cost per call has gone back above ₹50 and the 20-second call is now
+the dearest this account has recorded on either row. Restarting Endoscopy and
+Autism added volume — 58 calls on the 26th, the best day of the month — but at
+₹65.97 each, and Autism's ten calls cost ₹87.50 apiece. Lipoma is still holding
+the average down; excluding it the account is at ₹56.01 a call. Keep both rows in
+front of the client. Per-call figures cover **call campaigns only**:
 NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimised
 for WhatsApp conversations, so both sit outside every per-call figure.
 
