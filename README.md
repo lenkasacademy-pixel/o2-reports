@@ -22,35 +22,47 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **28 Sep 2026, 10:05 am IST**, covering 4–27 Sep (the 28th is a part-day
+Frozen **28 Sep 2026, 11:55 am IST**, covering 4–27 Sep (the 28th is a part-day
 and is excluded from every headline).
-Ad spend ₹27,430.88 + 18% GST ₹4,937.56 = **₹32,368.44 billed**.
+Ad spend ₹27,432.64 + 18% GST ₹4,937.88 = **₹32,370.52 billed**.
 367 calls placed · 92 lasted 20s · 43 lasted 60s. ₹51.28 per call placed and
-**₹204.56 per call that actually held 20 seconds**.
+**₹204.58 per call that actually held 20 seconds**.
 
-**27 September repaired most of what the 26th did.** ₹1,807.44 for 41 calls at
-**₹44.08**, with 11 of them over twenty seconds — against ₹66.30 a call and 9
+**The page now actually does what the line above says.** `render()` summed the
+whole of `DAILY`, part-day included, for the KPI tiles, the duration funnel, the
+campaign table and both table footers — so this README quoted ₹51.28 while the
+page rendered ₹51.40. Totals now come from
+`S = DAILY.filter(r => r[1] !== SNAP_DAY)`. The chart, the day rows and the
+Yesterday card still show the 28th; its row is tagged *so far* and both footers
+exclude it, so the day-matrix column totals add up to the grand total again.
+
+**Endoscopy has been paused.** It was still flagged live in `LIVE` while reading
+PAUSED at Meta. `LIVE` is now `{0, 4, 6}` — Autism, Pain Management and Lipoma.
+Three call campaigns live, not four.
+
+**27 September repaired most of what the 26th did.** ₹1,809.20 for 41 calls at
+**₹44.13**, with 11 of them over twenty seconds — against ₹66.28 a call and 9
 of 58 the day before. Both headline rates came back down: cost per call
-₹52.12 → ₹51.28, the 20-second call ₹209.78 → ₹204.56.
+₹52.18 → ₹51.28, the 20-second call ₹210.00 → ₹204.58.
 
 | 27 Sep | spend | calls | each | 20s |
 |---|---|---|---|---|
-| Pain Management | ₹687.57 | 11 | ₹62.51 | 5 |
-| Endoscopy | ₹663.62 | 16 | ₹41.48 | 4 |
-| Lipoma | ₹456.25 | 14 | ₹32.59 | 2 |
+| Pain Management | ₹687.77 | 11 | ₹62.52 | 5 |
+| Endoscopy | ₹664.59 | 16 | ₹41.54 | 4 |
+| Lipoma | ₹456.84 | 14 | ₹32.63 | 2 |
 | Autism | — | — | — | — |
 
 **Autism spending nothing is most of the improvement.** It was the dearest line
 on the 26th (₹875.00 for 10 calls, ₹87.50 each) and did not run on the 27th.
-It is still ACTIVE and has taken ₹12.37 so far on the 28th, so expect it back.
+It is still ACTIVE and has taken ₹48.07 for 2 calls so far on the 28th.
 
-**Endoscopy's pattern held and then broke it.** Its daily rate has read
-₹45.41 → ₹55.51 → ₹57.29 → ₹60.18 → **₹41.48**, so the "gets dearer the longer
-it runs" reading from yesterday did not survive contact with another day. Treat
-it as noisy rather than trending.
+**Endoscopy's pattern held and then broke it, and now it is off.** Its daily rate
+read ₹45.41 → ₹55.51 → ₹57.29 → ₹60.18 → **₹41.54** across its life, so the
+"gets dearer the longer it runs" reading did not survive contact with another
+day. It ends at ₹3,460.20 for 66 calls, ₹52.43 each.
 
-**Lipoma is still the best line, six days running**, at ₹2,274.51 for **69 calls
-at ₹32.96** over the settled days, against ₹55.52 for everything else.
+**Lipoma is still the best line, six days running**, at ₹2,275.10 for **69 calls
+at ₹32.97** over the settled days, against ₹55.53 for everything else.
 
 **WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each.
 Meta also reports how far each went: 27 first replies, 13 conversations past one
