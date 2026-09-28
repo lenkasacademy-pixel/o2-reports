@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>O2 Health Hub · Calls Report</title>
-<!-- Standalone snapshot: Meta Ads figures frozen 28 Sep 2026, 10:05 am IST. Account 924502380456661. September 2026 only. No live connection. -->
+<!-- Standalone snapshot: Meta Ads figures frozen 28 Sep 2026, 11:55 am IST. Account 924502380456661. September 2026 only. No live connection. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -165,7 +165,7 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
       <h1>Calls, and <em>what each one cost</em></h1>
     </div>
     <div class="mast-r">
-      <div class="stamp"><span class="dot"></span><span>Snapshot 28 Sep 2026, 10:05 am · account 924502380456661</span></div>
+      <div class="stamp"><span class="dot"></span><span>Snapshot 28 Sep 2026, 11:55 am · account 924502380456661</span></div>
     </div>
   </div>
 
@@ -226,12 +226,12 @@ footer{margin-top:44px; padding-top:18px; border-top:1px solid var(--hair); font
 
   <footer>
     <span>O2 Health Hub · prepared by Lenka's Academy</span>
-    <span class="mono">September 2026 · frozen 28 Sep, 10:05 am · source: Meta Ads Manager</span>
+    <span class="mono">September 2026 · frozen 28 Sep, 11:55 am · source: Meta Ads Manager</span>
   </footer>
 </div>
 
 <script>
-/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 28 Sep 2026, 10:05 am IST ----
+/* ---- baked figures: Meta Ads, account 924502380456661, September 2026, frozen 28 Sep 2026, 11:55 am IST ----
    20s/60s counts are derived as spend ÷ cost_per_action_type for
    click_to_call_native_20s_call_connect / _60s_call_connect. Every division lands
    on a whole number and the per-campaign sums equal Meta's own period totals. */
@@ -244,7 +244,7 @@ const CAMPS = [
   {n:"O2 Guardian · NRI + Bengaluru WhatsApp", short:"WhatsApp", type:"msg", c:"#3a7d44"},
   {n:"Lipoma Removal · Calls",       short:"Lipoma",     type:"calls", c:"#5a6e8c"}
 ];
-const LIVE = new Set([0, 3, 4, 6]);   /* campaign indexes still ACTIVE at Meta */
+const LIVE = new Set([0, 4, 6]);      /* campaign indexes still ACTIVE at Meta */
 const SNAP_DAY = "2026-09-28";        /* last day in the data (part-day) */
 const YDAY     = "2026-09-27";        /* the last complete day */
 const GST      = 0.18;                /* Meta bills 18% GST on ad spend in India */
@@ -293,16 +293,16 @@ const DAILY = [
   [3,"2026-09-25",  458.31, 8, 0, 0, 13, 11136,  9168,  68],
   [4,"2026-09-25",  251.90, 7, 3, 0,  8,  2985,  2628,  12],
   [6,"2026-09-25",  225.02, 7, 2, 0,  9,  7350,  6568,  24],
-  [0,"2026-09-26",  875.00,10, 1, 0, 12, 20267, 16716, 122],
+  [0,"2026-09-26",  875.00,10, 1, 0, 12, 20356, 16776, 125],
   [3,"2026-09-26", 1338.13,22, 5, 2, 39, 27120, 20259, 152],
   [4,"2026-09-26", 1081.11,13, 1, 1, 13,  9088,  7331,  29],
   [6,"2026-09-26",  551.44,13, 2, 0, 19, 17267, 14961,  66],
-  [3,"2026-09-27",  663.62,16, 4, 0, 19, 11794,  9460,  88],
-  [4,"2026-09-27",  687.57,11, 5, 2, 12,  7642,  6074,  27],
-  [6,"2026-09-27",  456.25,14, 2, 0, 16, 14160, 11863,  45],
-  [0,"2026-09-28",   12.37, 0, 0, 0,  0,   259,   202,   2],
-  [4,"2026-09-28",   34.80, 0, 0, 0,  0,   523,   430,   1],
-  [6,"2026-09-28",   14.22, 1, 0, 0,  1,   419,   371,   4]
+  [3,"2026-09-27",  664.59,16, 4, 0, 19, 11809,  9476,  88],
+  [4,"2026-09-27",  687.77,11, 5, 2, 12,  7649,  6074,  27],
+  [6,"2026-09-27",  456.84,14, 2, 0, 16, 14175, 11875,  45],
+  [0,"2026-09-28",   48.07, 2, 0, 0,  2,   979,   825,  10],
+  [4,"2026-09-28",  151.31, 1, 0, 0,  2,  2108,  1684,   5],
+  [6,"2026-09-28",   49.62, 1, 0, 0,  1,  1459,  1267,   7]
 ];
 const SP=2, PL=3, C20=4, C60=5, TAP=6, IMP=7, RCH=8, CLK=9;
 
@@ -315,9 +315,14 @@ const dLbl= d => { const m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep
 function render(){
   const R = DAILY, dates = [...new Set(R.map(r=>r[1]))].sort();
   const sum = (rows,i) => rows.reduce((a,r)=>a+r[i],0);
-  const T = {spend:sum(R,SP), placed:sum(R,PL), c20:sum(R,C20), c60:sum(R,C60),
-             tap:sum(R,TAP), imp:sum(R,IMP), clk:sum(R,CLK)};
-  const callRows  = R.filter(r=>CAMPS[r[0]].type==="calls");
+  /* SNAP_DAY is a part-day. Meta keeps revising the last ~48h, so it is kept out of
+     every total on this page - an unsettled day must never set a headline number. It
+     still appears in the chart and in the day-by-day table, labelled as still counting. */
+  const S = R.filter(r=>r[1]!==SNAP_DAY);
+  const sDates = [...new Set(S.map(r=>r[1]))].sort();
+  const T = {spend:sum(S,SP), placed:sum(S,PL), c20:sum(S,C20), c60:sum(S,C60),
+             tap:sum(S,TAP), imp:sum(S,IMP), clk:sum(S,CLK)};
+  const callRows  = S.filter(r=>CAMPS[r[0]].type==="calls");
   const callSpend = sum(callRows,SP);
 
   const gst = T.spend * GST;
@@ -379,7 +384,8 @@ function render(){
 
   /* ---------- per campaign ---------- */
   const per = CAMPS.map((c,i)=>{
-    const rs = R.filter(r=>r[0]===i); if(!rs.length) return null;
+    if(!R.some(r=>r[0]===i)) return null;
+    const rs = S.filter(r=>r[0]===i);
     return {i, c, days:rs.length, spend:sum(rs,SP), placed:sum(rs,PL), c20:sum(rs,C20),
             c60:sum(rs,C60), tap:sum(rs,TAP), imp:sum(rs,IMP), clk:sum(rs,CLK)};
   }).filter(Boolean);
@@ -397,7 +403,7 @@ function render(){
       + `<th>Calls</th><th>20s+</th><th>60s+</th><th>Spent</th></tr></thead><tbody>`;
   let body = dates.map(d=>{
     const day = R.filter(r=>r[1]===d);
-    return `<tr><td class="mono">${dLbl(d)}</td>` + cols.map(i=>{
+    return `<tr><td class="mono">${dLbl(d)}${d===SNAP_DAY?' <span class="tag">so far</span>':""}</td>` + cols.map(i=>{
       const hit = day.find(r=>r[0]===i);
       if(!hit) return `<td class="mono z">·</td>`;
       return `<td class="mono${hit[PL]?"":" z"}">${hit[PL]}</td>`;
@@ -408,7 +414,7 @@ function render(){
       + `<td class="mono">${inr0(sum(day,SP))}</td></tr>`;
   }).join("");
   let foot = `<tfoot><tr><td>Total</td>` + cols.map(i=>
-      `<td class="mono">${sum(R.filter(r=>r[0]===i),PL)}</td>`).join("")
+      `<td class="mono">${sum(S.filter(r=>r[0]===i),PL)}</td>`).join("")
       + `<td class="mono">${T.placed}</td><td class="mono">${T.c20}</td>`
       + `<td class="mono">${T.c60}</td><td class="mono">${inr0(T.spend)}</td></tr></tfoot>`;
   matrix.innerHTML = head + body + "</tbody>" + foot;
@@ -430,7 +436,7 @@ function render(){
       <td class="mono">${isCall&&o.c20? inr(o.spend/o.c20):"—"}</td>
       <td class="mono">${num(o.clk)}</td></tr>`;
   }).join("");
-  let cf = `<tfoot><tr><td>Total</td><td class="mono">${dates.length} days</td>
+  let cf = `<tfoot><tr><td>Total</td><td class="mono">${sDates.length} days</td>
       <td class="mono">${inr(T.spend)}</td><td class="mono">${T.placed}</td>
       <td class="mono">${T.c20}</td><td class="mono">${T.c60}</td>
       <td class="mono">${inr(callSpend/T.placed)}</td>
