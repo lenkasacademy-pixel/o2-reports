@@ -22,57 +22,68 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **28 Sep 2026, 10:05 am IST**, covering 4–27 Sep (the 28th is a part-day
+Frozen **29 Sep 2026, 10:10 am IST**, covering 4–28 Sep (the 29th is a part-day
 and is excluded from every headline).
-Ad spend ₹27,430.88 + 18% GST ₹4,937.56 = **₹32,368.44 billed**.
-367 calls placed · 92 lasted 20s · 43 lasted 60s. ₹51.28 per call placed and
-**₹204.56 per call that actually held 20 seconds**.
+Ad spend ₹28,990.93 + 18% GST ₹5,218.37 = **₹34,209.30 billed**.
+399 calls placed · 100 lasted 20s · 46 lasted 60s. ₹51.08 per call placed and
+**₹203.79 per call that actually held 20 seconds**.
 
-**27 September repaired most of what the 26th did.** ₹1,807.44 for 41 calls at
-**₹44.08**, with 11 of them over twenty seconds — against ₹66.30 a call and 9
-of 58 the day before. Both headline rates came back down: cost per call
-₹52.12 → ₹51.28, the 20-second call ₹209.78 → ₹204.56.
+**Both headline rates improved again, and this time the mix helped rather than
+hid.** Cost per call placed ₹51.28 → **₹51.08**, the 20-second call
+₹204.56 → **₹203.79**. That is the second consecutive refresh in the right
+direction after the 26th's spike.
 
-| 27 Sep | spend | calls | each | 20s |
+**28 September was the cheapest full day of the month**: ₹1,555.54 for **32 calls
+at ₹48.61**, 8 of them over twenty seconds.
+
+| 28 Sep | spend | calls | each | 20s |
 |---|---|---|---|---|
-| Pain Management | ₹687.57 | 11 | ₹62.51 | 5 |
-| Endoscopy | ₹663.62 | 16 | ₹41.48 | 4 |
-| Lipoma | ₹456.25 | 14 | ₹32.59 | 2 |
-| Autism | — | — | — | — |
+| Pain Management | ₹692.96 | 11 | ₹62.997 | 4 |
+| Autism | ₹493.49 | 12 | ₹41.12 | 3 |
+| Lipoma | ₹369.09 | 9 | ₹41.01 | 1 |
+| Endoscopy | — | — | — | — |
 
-**Autism spending nothing is most of the improvement.** It was the dearest line
-on the 26th (₹875.00 for 10 calls, ₹87.50 each) and did not run on the 27th.
-It is still ACTIVE and has taken ₹12.37 so far on the 28th, so expect it back.
+**Autism came back, ran well, and then stopped.** Yesterday's note expected it
+back after its ₹12.37 part-day; it returned on the 28th and was the *second
+cheapest* line at ₹41.12 — a long way from the ₹87.50 it cost on the 26th. It
+now reads **PAUSED**, as does Endoscopy. `LIVE` is down to Pain Management and
+Lipoma; two of the four call campaigns that were running last refresh are off.
 
-**Endoscopy's pattern held and then broke it.** Its daily rate has read
-₹45.41 → ₹55.51 → ₹57.29 → ₹60.18 → **₹41.48**, so the "gets dearer the longer
-it runs" reading from yesterday did not survive contact with another day. Treat
-it as noisy rather than trending.
+**Endoscopy did not run on the 28th.** Its daily rate now reads
+₹45.41 → ₹55.51 → ₹57.29 → ₹60.18 → **₹41.58** and then nothing. The
+"gets dearer the longer it runs" reading is still dead; with the campaign paused
+there is no next point to test it against.
 
-**Lipoma is still the best line, six days running**, at ₹2,274.51 for **69 calls
-at ₹32.96** over the settled days, against ₹55.52 for everything else.
+**Lipoma is still the best line, seven days running**, at ₹2,645.50 for **78 calls
+at ₹33.92** over the settled days, against ₹55.25 for everything else.
 
-**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each.
-Meta also reports how far each went: 27 first replies, 13 conversations past one
-message, 5 past three, 3 past five — and every one of the deep ones is the Gulf
-ad set. Bengaluru buys a conversation for ₹160.80 against Gulf's ₹273.88. None of
-that is on the page yet; the `DAILY` row format has no field for messaging depth.
+**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each —
+unmoved for a fifth refresh. Meta's depth figures are also unchanged: 27 first
+replies, 13 conversations past one message, 5 past three, 3 past five, and every
+one of the deep ones is the Gulf ad set. Bengaluru buys a conversation for
+₹160.80 against Gulf's ₹273.88. None of that is on the page yet; the `DAILY` row
+format has no field for messaging depth.
 
-**Read the headline carefully — the whole improvement is the new campaign:**
+**Read the headline carefully — Lipoma is still holding the average down:**
 
-| | 4–22 | 4–23 | 4–24 | 4–26 | 4–27 |
-|---|---|---|---|---|---|
-| Cost per call placed | ₹50.37 | ₹51.03 | ₹49.39 | ₹52.12 | **₹51.28** |
-| …excluding Lipoma | ₹51.55 | ₹53.24 | ₹52.64 | ₹56.01 | **₹55.52** |
-| Cost per 20-second call | ₹186.55 | ₹184.36 | ₹181.34 | ₹209.78 | **₹204.56** |
-| …excluding Lipoma | ₹187.72 | ₹191.08 | ₹194.87 | ₹226.53 | **₹217.69** |
+| | 4–22 | 4–23 | 4–24 | 4–26 | 4–27 | 4–28 |
+|---|---|---|---|---|---|---|
+| Cost per call placed | ₹50.37 | ₹51.03 | ₹49.39 | ₹52.12 | ₹51.28 | **₹51.08** |
+| …excluding Lipoma | ₹51.55 | ₹53.24 | ₹52.64 | ₹56.01 | ₹55.52 | **₹55.25** |
+| Cost per 20-second call | ₹186.55 | ₹184.36 | ₹181.34 | ₹209.78 | ₹204.56 | **₹203.79** |
+| …excluding Lipoma | ₹187.72 | ₹191.08 | ₹194.87 | ₹226.53 | ₹217.69 | **₹213.66** |
 
-Both rates came back down this refresh but neither is back to where it was on
-the 24th, and the 20-second call is still the second-dearest reading recorded.
-Lipoma is holding the average down on its own; excluding it the account sits at
-₹55.52 a call. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
-NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimised
-for WhatsApp conversations, so both sit outside every per-call figure.
+Every row moved the right way, but none is back to the 24th's level and the
+20-second call is still the third-dearest reading recorded. Excluding Lipoma the
+account sits at ₹55.25 a call. Keep both rows in front of the client. Per-call
+figures cover **call campaigns only**: NRI Elder Care drives website traffic and
+the NRI + Bengaluru campaign optimised for WhatsApp conversations, so both sit
+outside every per-call figure.
+
+**26 September was revised after publication.** Autism's row for that day gained
+89 impressions, 60 reach and 3 link clicks (spend unchanged at ₹875.00). The
+account-level reconciliation caught it; the row is corrected here. Spend and call
+counts for the day are unchanged, so no headline moved.
 
 **18 September was a near-total stop** — the whole account spent ₹6.43 that day,
 122 impressions, both campaigns still ACTIVE. Kept here because nobody has
@@ -117,7 +128,8 @@ Pull with Meta MCP `ads_get_ad_entities`, `level: "campaign"`, `time_increment: 
   exactly this reason.
 - `LIVE` is a `Set` of campaign indexes still ACTIVE at Meta, not a single index.
   It became a set on 23 Sep when Lipoma started and WhatsApp was paused. Keep it
-  in step with the statuses or the "live" tag lies.
+  in step with the statuses or the "live" tag lies. On the 29 Sep pull it dropped
+  from `{0, 3, 4, 6}` to `{4, 6}` — Autism and Endoscopy both went PAUSED.
 - Update the snapshot date in `index.html` (title comment, masthead stamp, footer)
   and here.
 - The `msg` campaign has **no column for messaging conversations** — `DAILY`'s
