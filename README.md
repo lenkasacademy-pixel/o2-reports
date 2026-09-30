@@ -22,67 +22,69 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **29 Sep 2026, 11:10 am IST**, covering 4–28 Sep (the 29th is a part-day
+Frozen **30 Sep 2026, 8:10 am IST**, covering 4–29 Sep (the 30th is a part-day
 and is excluded from every headline).
-Ad spend ₹28,994.36 + 18% GST ₹5,218.98 = **₹34,213.34 billed**.
-399 calls placed · 100 lasted 20s · 46 lasted 60s. ₹51.08 per call placed and
-**₹203.83 per call that actually held 20 seconds**.
+Ad spend ₹30,049.04 + 18% GST ₹5,408.83 = **₹35,457.87 billed**.
+419 calls placed · 103 lasted 20s · 46 lasted 60s. ₹51.16 per call placed and
+**₹208.13 per call that actually held 20 seconds**.
 
-**28 September was an ordinary day, and the account is down to two campaigns.**
-₹1,558.97 for 32 calls at **₹48.72**, 8 of them over twenty seconds. Both
-headline rates edged down again: cost per call ₹51.28 → ₹51.08, the 20-second
-call ₹204.56 → ₹203.83.
+**29 September was an ordinary two-campaign day.** ₹1,050.15 for 20 calls at
+**₹52.51**, 3 of them over twenty seconds. Both headline rates edged back up
+after two refreshes of falling: cost per call ₹51.08 → ₹51.16, the 20-second
+call ₹203.83 → ₹208.13.
 
-| 28 Sep | spend | calls | each | 20s |
+| 29 Sep | spend | calls | each | 20s |
 |---|---|---|---|---|
-| Pain Management | ₹694.21 | 11 | ₹63.11 | 4 |
-| Autism | ₹494.70 | 12 | ₹41.23 | 3 |
-| Lipoma | ₹370.06 | 9 | ₹41.12 | 1 |
+| Pain Management | ₹668.58 | 9 | ₹74.29 | 1 |
+| Lipoma | ₹381.57 | 11 | ₹34.69 | 2 |
+| Autism | — | — | — | — |
 | Endoscopy | — | — | — | — |
 
-**Autism came back as expected, cheaply — and is now paused.** On the 26th it was
-the dearest line (₹87.50 a call); on the 28th it bought 12 calls at ₹41.23, level
-with Lipoma. It has spent nothing on the 29th and Meta now reports it PAUSED.
+**Autism is finished.** It spent nothing on the 29th or the 30th and Meta reports
+it PAUSED. It closes at ₹2,131.13 for 42 calls, **₹50.74 each** — 10 held twenty
+seconds (₹213.11) and 4 held a minute (₹532.78). Its last day, the 28th, was its
+cheapest at ₹41.29.
 
-**Endoscopy is paused.** It spent nothing on the 28th and its status is PAUSED.
-It closes at ₹3,460.95 for 66 calls (₹52.44 each) but only 12 held twenty seconds,
-**₹288.41 per real conversation** — the dearest of the call campaigns bar the
-one-day Kukatpally test. Its daily rate read ₹45.41 → ₹55.51 → ₹57.29 → ₹60.82 →
-₹41.58 over its last five days: noise, not a trend.
+**Endoscopy is paused and unchanged** at ₹3,460.95 for 66 calls (₹52.44 each),
+only 12 of them past twenty seconds — **₹288.41 per real conversation**, still the
+dearest of the call campaigns bar the one-day Kukatpally test.
 
-**Only Pain Management and Lipoma are live now.** Pain Management was the dearest
-line on both the 27th (₹62.59) and the 28th (₹63.11), but it has the highest
-share of calls that last: 60 of its 208 (29%) held twenty seconds, ₹194.05 each.
+**Only Pain Management and Lipoma are live.** Pain Management was the dearest
+line again on the 29th (₹74.29, its worst day since the 26th) and now sits at
+₹12,312.08 for 217 settled calls, **₹56.74 each**. It still holds callers best in
+absolute terms: 61 of its 217 (28%) reached twenty seconds at ₹201.84.
 
-**Lipoma is still the cheapest line per call placed, seven days running** — on the
-28th by eleven paise over Autism, and that was its second-dearest day. Over the
-settled days it has taken ₹2,646.47 for **78 calls at ₹33.93**, against ₹55.25
-for everything else.
+**Lipoma's seven-day run as the cheapest line was broken by a revision, not a
+day.** On the 28th as published it led Autism by eleven paise; Meta then settled
+Lipoma up ₹3.02 and Autism up ₹0.74, and the 28th now reads Autism ₹41.29 against
+Lipoma ₹41.45 — seventeen paise the other way. It was cheapest again on the 29th
+(₹34.69) and over the settled days has taken ₹3,031.06 for **89 calls at ₹34.06**,
+against ₹55.78 for everything else.
 
-**Small revisions this refresh.** Meta settled 27 Sep up by ₹4.51 (Endoscopy
-+₹1.72, Pain +₹0.89, Lipoma +₹1.90); no call counts moved. The 29th so far is
-₹71.22 for 3 calls.
+**Small revisions this refresh.** Meta settled 28 Sep up by ₹4.53 (Lipoma +₹3.02,
+Pain +₹0.77, Autism +₹0.74) and added impressions to all three; no call counts
+moved. The 30th so far is ₹10.51 for 1 call.
 
-**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each.
-Meta also reports how far each went: 27 first replies, 13 conversations past one
-message, 5 past three, 3 past five — and every one of the deep ones is the Gulf
-ad set. Bengaluru buys a conversation for ₹160.80 against Gulf's ₹273.88. None of
-that is on the page yet; the `DAILY` row format has no field for messaging depth.
+**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each —
+unmoved for a third refresh. Meta also reports how far each went: 27 first
+replies, 13 conversations past one message, 5 past three, 3 past five — and every
+one of the deep ones is the Gulf ad set. Bengaluru buys a conversation for
+₹160.80 against Gulf's ₹273.88. None of that is on the page yet; the `DAILY` row
+format has no field for messaging depth.
 
 **Read the headline carefully — the whole improvement is the new campaign:**
 
-| | 4–22 | 4–23 | 4–24 | 4–26 | 4–27 | 4–28 |
-|---|---|---|---|---|---|---|
-| Cost per call placed | ₹50.37 | ₹51.03 | ₹49.39 | ₹52.12 | ₹51.28 | **₹51.08** |
-| …excluding Lipoma | ₹51.55 | ₹53.24 | ₹52.64 | ₹56.01 | ₹55.52 | **₹55.25** |
-| Cost per 20-second call | ₹186.55 | ₹184.36 | ₹181.34 | ₹209.78 | ₹204.56 | **₹203.83** |
-| …excluding Lipoma | ₹187.72 | ₹191.08 | ₹194.87 | ₹226.53 | ₹217.69 | **₹213.69** |
+| | 4–22 | 4–23 | 4–24 | 4–26 | 4–27 | 4–28 | 4–29 |
+|---|---|---|---|---|---|---|---|
+| Cost per call placed | ₹50.37 | ₹51.03 | ₹49.39 | ₹52.12 | ₹51.28 | ₹51.08 | **₹51.16** |
+| …excluding Lipoma | ₹51.55 | ₹53.24 | ₹52.64 | ₹56.01 | ₹55.52 | ₹55.25 | **₹55.78** |
+| Cost per 20-second call | ₹186.55 | ₹184.36 | ₹181.34 | ₹209.78 | ₹204.56 | ₹203.83 | **₹208.13** |
+| …excluding Lipoma | ₹187.72 | ₹191.08 | ₹194.87 | ₹226.53 | ₹217.69 | ₹213.69 | **₹219.12** |
 
-Both rates fell for a second refresh but neither is back to where it was on
-the 24th. Across every refresh recorded here the per-call rate has stayed inside ₹49–₹53;
-read it as flat.
+Both rates ticked back up. Across every refresh recorded here the per-call rate has
+stayed inside ₹49–₹53; read it as flat.
 Lipoma is still holding the average down on its own; excluding it the account
-sits at ₹55.25 a call. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
+sits at ₹55.78 a call. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
 NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimised
 for WhatsApp conversations, so both sit outside every per-call figure.
 
