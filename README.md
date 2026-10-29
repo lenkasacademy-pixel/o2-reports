@@ -22,7 +22,7 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **29 Oct 2026, 11:10 am IST**, covering **4-30 Sep — the complete month**.
+Frozen **29 Oct 2026, 8:15 am IST**, covering **4-30 Sep — the complete month**.
 Ad spend ₹31,099.61 + 18% GST ₹5,597.93 = **₹36,697.54 billed**.
 437 calls placed · 105 lasted 20s · 47 lasted 60s. ₹51.46 per call placed and
 **₹214.17 per call that actually held 20 seconds**.
