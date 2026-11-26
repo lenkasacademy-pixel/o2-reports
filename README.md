@@ -7,7 +7,8 @@ Live: https://lenkasacademy-pixel.github.io/o2-reports/
 A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 `DAILY` arrays near the bottom of the file — nothing calls the network.
 
-**Scope: September 2026 only** (from 4 Sep, the first day with delivery).
+**Scope: September 2026 only** - 4-30 Sep, the month's full run of delivery,
+now complete and fully settled.
 
 ## What it shows
 
@@ -22,73 +23,70 @@ A single self-contained `index.html`. Figures are baked into the `CAMPS` and
 
 ## Snapshot
 
-Frozen **29 Sep 2026, 11:10 am IST**, covering 4–28 Sep (the 29th is a part-day
-and is excluded from every headline).
-Ad spend ₹28,994.36 + 18% GST ₹5,218.98 = **₹34,213.34 billed**.
-399 calls placed · 100 lasted 20s · 46 lasted 60s. ₹51.08 per call placed and
-**₹203.83 per call that actually held 20 seconds**.
+Frozen **26 Nov 2026, 8:15 am IST**. **September is closed.** The window is the
+month's full run of delivery, **4-30 Sep**, and every day in it is settled - there
+is no part-day in this cut, so `SNAP_DAY` is empty and nothing is excluded.
+Ad spend ₹31,099.61 + 18% GST ₹5,597.93 = **₹36,697.54 billed**.
+437 calls placed · 105 lasted 20s · 47 lasted 60s. ₹51.46 per call placed and
+**₹214.17 per call that actually held 20 seconds**.
 
-**28 September was an ordinary day, and the account is down to two campaigns.**
-₹1,558.97 for 32 calls at **₹48.72**, 8 of them over twenty seconds. Both
-headline rates edged down again: cost per call ₹51.28 → ₹51.08, the 20-second
-call ₹204.56 → ₹203.83.
+**This refresh closes the month.** The previous cut stopped at the 28th because the
+29th was a live part-day showing only ₹71.22. Both remaining days have settled:
 
-| 28 Sep | spend | calls | each | 20s |
+| | spend | calls | each | 20s |
 |---|---|---|---|---|
-| Pain Management | ₹694.21 | 11 | ₹63.11 | 4 |
-| Autism | ₹494.70 | 12 | ₹41.23 | 3 |
-| Lipoma | ₹370.06 | 9 | ₹41.12 | 1 |
-| Endoscopy | — | — | — | — |
+| 29 Sep | ₹1,056.20 | 20 | ₹52.81 | 3 |
+| 30 Sep | ₹1,044.52 | 18 | ₹58.03 | 2 |
 
-**Autism came back as expected, cheaply — and is now paused.** On the 26th it was
-the dearest line (₹87.50 a call); on the 28th it bought 12 calls at ₹41.23, level
-with Lipoma. It has spent nothing on the 29th and Meta now reports it PAUSED.
+Only Pain Management and Lipoma ran on those two days. **They were weak on duration** -
+38 calls but only 5 held twenty seconds - which is why closing the month moved the
+headline the way it did: cost per call placed ₹51.08 -> **₹51.46**, but the
+20-second call ₹203.83 -> **₹214.17** and the minute-long one ₹443.10 -> **₹478.47**.
+The month got slightly dearer per call and noticeably dearer per real conversation.
 
-**Endoscopy is paused.** It spent nothing on the 28th and its status is PAUSED.
-It closes at ₹3,460.95 for 66 calls (₹52.44 each) but only 12 held twenty seconds,
-**₹288.41 per real conversation** — the dearest of the call campaigns bar the
-one-day Kukatpally test. Its daily rate read ₹45.41 → ₹55.51 → ₹57.29 → ₹60.82 →
-₹41.58 over its last five days: noise, not a trend.
+**Meta revised the already-published 4-28 window up by ₹4.53** (Autism's 28 Sep
++₹0.74 to ₹495.44, the rest spread thinner). **No call count moved** - 399 placed,
+100 at 20s and 46 at 60s for 4-28 are exactly as published.
 
-**Only Pain Management and Lipoma are live now.** Pain Management was the dearest
-line on both the 27th (₹62.59) and the 28th (₹63.11), but it has the highest
-share of calls that last: 60 of its 208 (29%) held twenty seconds, ₹194.05 each.
+**Final per-campaign standings (4-30 Sep, ex-GST):**
 
-**Lipoma is still the cheapest line per call placed, seven days running** — on the
-28th by eleven paise over Autism, and that was its second-dearest day. Over the
-settled days it has taken ₹2,646.47 for **78 calls at ₹33.93**, against ₹55.25
-for everything else.
+| Campaign | days | spend | calls | 20s | 60s | per call | per 20s |
+|---|---|---|---|---|---|---|---|
+| Pain Management | 21 | ₹12,900.47 | 222 | 61 | 32 | ₹58.11 | ₹211.48 |
+| Lipoma Removal | 9 | ₹3,493.24 | 102 | 21 | 6 | **₹34.25** | **₹166.34** |
+| Endoscopy | 5 | ₹3,460.95 | 66 | 12 | 4 | ₹52.44 | ₹288.41 |
+| Autism | 6 | ₹2,131.13 | 42 | 10 | 4 | ₹50.74 | ₹213.11 |
+| Kukatpally (one-day test) | 1 | ₹502.22 | 5 | 1 | 1 | ₹100.44 | ₹502.22 |
+| NRI Elder Care (website) | 4 | ₹2,686.81 | — | — | — | — | — |
+| NRI + Bengaluru (WhatsApp) | 12 | ₹5,924.79 | — | — | — | — | — |
 
-**Small revisions this refresh.** Meta settled 27 Sep up by ₹4.51 (Endoscopy
-+₹1.72, Pain +₹0.89, Lipoma +₹1.90); no call counts moved. The 29th so far is
-₹71.22 for 3 calls.
+**Lipoma finished as the cheapest line in the account and by a wide margin** -
+₹34.25 a call against ₹56.70 for every other call campaign put together, and
+₹166.34 per 20-second call against ₹226.13. It ran only nine days. If the account
+comes back, this is the line to come back with.
 
-**WhatsApp stays paused** at ₹5,924.79 for **27 conversations**, ₹219.44 each.
-Meta also reports how far each went: 27 first replies, 13 conversations past one
-message, 5 past three, 3 past five — and every one of the deep ones is the Gulf
-ad set. Bengaluru buys a conversation for ₹160.80 against Gulf's ₹273.88. None of
-that is on the page yet; the `DAILY` row format has no field for messaging depth.
+**Only Pain Management is still ACTIVE at Meta;** every other campaign reads PAUSED,
+Lipoma included (it was still live at the last cut, so `LIVE` is now just `{4}`).
 
-**Read the headline carefully — the whole improvement is the new campaign:**
+**The account stopped spending on 24 October and has not spent since.** October took
+₹18,476.76 across 21 days with delivery, then nothing: zero spend and zero
+impressions every day from 25 Oct through 26 Nov. That is outside this report's
+September scope and no September figure depends on it, but the client should not be
+told "the campaigns are running" - they are not. If October onward should be
+reported, this page needs a month tab bar the way `halcyon-reports` has one.
 
-| | 4–22 | 4–23 | 4–24 | 4–26 | 4–27 | 4–28 |
-|---|---|---|---|---|---|---|
-| Cost per call placed | ₹50.37 | ₹51.03 | ₹49.39 | ₹52.12 | ₹51.28 | **₹51.08** |
-| …excluding Lipoma | ₹51.55 | ₹53.24 | ₹52.64 | ₹56.01 | ₹55.52 | **₹55.25** |
-| Cost per 20-second call | ₹186.55 | ₹184.36 | ₹181.34 | ₹209.78 | ₹204.56 | **₹203.83** |
-| …excluding Lipoma | ₹187.72 | ₹191.08 | ₹194.87 | ₹226.53 | ₹217.69 | **₹213.69** |
+**WhatsApp closed at ₹5,924.79 for 27 conversations, ₹219.44 each** - unchanged, and
+the depth split still reproduces exactly: 27 first replies, 13 past one message,
+5 past three. Every deep one is the Gulf ad set. Still not on the page; the `DAILY`
+row format has no field for messaging depth.
 
-Both rates fell for a second refresh but neither is back to where it was on
-the 24th. Across every refresh recorded here the per-call rate has stayed inside ₹49–₹53;
-read it as flat.
-Lipoma is still holding the average down on its own; excluding it the account
-sits at ₹55.25 a call. Keep both rows in front of the client. Per-call figures cover **call campaigns only**:
-NRI Elder Care drives website traffic and the NRI + Bengaluru campaign optimised
-for WhatsApp conversations, so both sit outside every per-call figure.
+**18 September remains unexplained** - the whole account spent ₹6.43 that day on
+122 impressions with both campaigns ACTIVE. Kept on the record because nobody has
+accounted for it.
 
-**18 September was a near-total stop** — the whole account spent ₹6.43 that day,
-122 impressions, both campaigns still ACTIVE. Kept here because nobody has
-explained it yet; delivery has been normal since.
+Per-call figures cover **call campaigns only**: NRI Elder Care drives website traffic
+and the NRI + Bengaluru campaign optimised for WhatsApp conversations, so both sit
+outside every per-call figure.
 
 ## GST and dates
 
@@ -96,9 +94,12 @@ explained it yet; delivery has been normal since.
 is GST-inclusive; **every per-call cost is ex-GST**, so it reconciles against Ads
 Manager, and each one is labelled that way on the page.
 
-`SNAP_DAY` is the last day present in the data (a part-day) and `YDAY` the last
+`SNAP_DAY` is the live part-day, excluded from every headline, and `YDAY` the last
 complete day, which is what the Yesterday card reads. Both are plain constants —
 move them together on every refresh, or the card will silently show a stale day.
+**When the month is closed there is no part-day: set `SNAP_DAY` to `""`** and every
+day counts. Do not leave a settled day sitting in `SNAP_DAY` — it would be dropped
+from the totals. `YDAY` is then the last day of the month.
 
 ## Refreshing
 
